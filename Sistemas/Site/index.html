@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testando</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -13,11 +13,184 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="div1"></div>
-    <div class="div2"></div>
-    <div class="div3"></div>
-    <div class="div4"></div>
-    <div class="div5"></div>
-    <div class="div6"></div>
+    <header id="header">
+        <div class="containerHeader">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo">
+            </div>
+            <div class="atalhos">
+                <span>
+                    <a href="#main">Home</a>
+                </span>
+                <span>
+                    <a href="#sobreMim">Sobre Mim</a>
+                </span>
+                <span>
+                    <a href="#sobreProjeto">Sobre o Projeto</a>
+                </span>
+                <span>
+                    <a href="#meusJogos">Meus Jogos</a>
+                </span>
+                <span>
+                    <a href="#contato">Contato</a>
+                </span>
+            </div>
+            <div class="buttons">
+                <a href="./login.html">Login</a>
+                <a href="./cadastro.html">Cadastro</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="overlayMain"></div>
+        <div class="containerMain">
+            <div class="background">
+                <video src="./assets/comprimido-video_background_50.mp4" autoplay muted loop></video>
+            </div>
+            <div class="conteudo">
+                <div class="titlesMain">
+                    <div class="titleMain">
+                        <h1>Transformando ideias em mundo jogáveis</h1>
+                    </div>
+                    <div class="subtitleMain">
+                        <h2>Um projeto pessoal que une criatividade, tecnologia e paixão por desenvolvimento</h2>
+                    </div>
+                </div>
+                <div class="buttonMain">
+                    <a href="#sobreProjeto">Conheça o Projeto</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <section id="sobreMim">
+        <div class="containerSobreMim">
+            <img src="./assets/schema-1000_blue.png" alt="Imagem ilustrativa sobre Lógica">
+            <img src="./assets/cognition-1000_blue.png" alt="Imagem ilustrativa sobre Criatividade">
+            <img src="./assets/cognition-1000_purple.png" alt="Imagem ilustrativa sobre Criatividade">
+            <img src="./assets/schema-1000_purple.png" alt="Imagem ilustrativa sobre Lógica">
+            <div class="titleSobreMim">
+                <h2>Sobre Mim</h2>
+            </div>    
+            <div class="subtitleSobreMim">
+                <h4>Eduardo Ribeiro Santos Nascimento</h4>
+            </div>
+            <div class="conteudo">
+                <div class="img">
+                    <img src="./assets/logo.png" alt="Imagem de Eduardo">
+                </div>
+                <div class="historia">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium aperiam, amet soluta adipisci est corrupti, minus vel consequatur ipsum a odit iste? Expedita vero consequuntur deleniti repellendus esse possimus assumenda.
+                </div>
+                <div class="motivacao">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, officia eius in eaque cumque modi aspernatur omnis? Corrupti distinctio dolore ipsum deleniti error tempora natus nostrum! Veniam ex excepturi ipsa!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobreProjeto">
+        <div class="containerSobreProjeto">
+            <div class="titleProjeto">
+                <h2>Sobre o Projeto</h2>
+            </div>
+            <div class="subtitleProjeto">
+                <h4>Projeto Individual 1° Semestre 1ADSA 2025/2</h4>
+            </div>
+            <div class="conteudo">
+                <div class="cards ideia">
+                    <span class="miniTitle">💡 Ideia</span>
+                </div>
+                <div class="cards desenvolvimento">
+                    <span class="miniTitle">🧠 Desenvolvimento</span>
+                </div>
+                <div class="cards final">
+                    <span class="miniTitle">🎮 Final</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="meusJogos">
+        <div class="containerMeusJogos">
+            <div class="titleMeusJogos">
+                <h2>Meus Jogos</h2>
+            </div>
+            <div class="subtitleMeusJogos">
+                <h4>Jogos em desenvolvimento ou finalizados</h4>
+            </div>
+            <div class="conteudo">
+                <span class="arrowLeft">
+                    <img src="./assets/arrow_left-1000_black.png" alt="Imagem do botão de uma seta para Esquerda">
+                </span>
+                <div class="jogoSelecionado">
+                    <h3>Clicker Lizard</h3>
+                </div>
+                <span class="arrowRight">
+                    <img src="./assets/arrow_right-1000_black.png" alt="Imagem do botão de uma seta para Direita">
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="containerContato">
+            <div class="titleContato">
+                <h2>Contato</h2>
+            </div>
+            <div class="subtitleContato">
+                <h4>De Ideias e sugestões de possíveis alterações ou adições.</h4>
+                <h4>Entre em contato para negócios ou networking.</h4>
+            </div>
+            <div class="conteudo">
+                <div class="formulario">
+                    <form action="post">
+                        <input type="text" name="" id="input_nomeUsuario" placeholder="Nome do Usuário">
+                        <input type="text" name="" id="input_emailUsuario" placeholder="Email para contato">
+                        <input type="number" name="" id="input_telefoneUsuario" placeholder="Telefone para contato">
+                        <select name="" id="select_temaMensagem">
+                            <option value="#" selected disabled>Selecione uma Opção de Tema</option>
+                            <option value="1">...</option>
+                        </select>
+                        <textarea name="" id="textarea_mensagem" placeholder="Deixe sua mensagem..." rows="5"></textarea>
+                    </form>
+                </div>
+                <div class="redes">
+                    <a href="https://github.com/Eduardo-xX">
+                        <img src="./assets/github-256_white.png" alt="Logo do Github">
+                    </a>
+                    <a href="https://www.instagram.com/eduardo.nascimento_06/">
+                        <img src="./assets/Instagram.png" alt="Logo do Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/eduardo-nascimento-rs/">
+                        <img src="./assets/LinkedIn.png" alt="Logo do LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="containerFooter">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo">
+            </div>
+            <div class="creditos">
+                <div class="nome">
+                    <span>Projeto Pessoal:</span>
+                    <span>Eduardo Ribeiro Santos Nascimento</span>
+                </div>
+                <div class="copyright">
+                    <span>&copy; 2025 Eduardo Nascimento. Todos os direitos reservados.</span>
+                </div>
+            </div>
+            <div class="contatoDireto">
+                <span>Contato mais Direto:</span>
+                <span>eduardo.nascimento@gmail.com</span>
+                <span>(11) 92188-2701</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
