@@ -8,6 +8,7 @@
     --cor-secundario_4: #9C3848;
     --cor-white: #ffffff;
     --cor-black: #000000;
+    --cor-cinza: #D9D9D9;
     --fontFamily-title_1: Poppins, sans-serif;
     --fontFamily-title_2: Orbitron, sans-serif;
     --fontFamily-regular_1: Inter, sans-serif;
@@ -17,6 +18,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -132,7 +134,7 @@ main .overlayMain {
     position: absolute; 
     width: 100%;
     height: 850px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 main .background {
@@ -164,6 +166,7 @@ main .conteudo .titleMain {
 }
 
 main .conteudo .subtitleMain {
+    font-family: var(--fontFamily-title_2);
     font-size: .8rem;
 }
 
@@ -187,4 +190,506 @@ main .conteudo .buttonMain a {
 main .conteudo .buttonMain a:hover {
     background-color: var(--cor-secundario_1);
     transform: scale(1.2);
+}
+
+/* Fim Main */
+
+/* Sobre Mim */
+
+#sobreMim {
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+
+#sobreMim .imgDeco {
+    width: 100px;
+    position: absolute;
+}
+
+#sobreMim .imgDeco1 {
+    top: 0;
+    left: 0;
+}
+#sobreMim .imgDeco2 {
+    top: 0;
+    right: 0;
+}
+#sobreMim .imgDeco3 {
+    bottom: 0;
+    left: 0;
+}
+#sobreMim .imgDeco4 {
+    bottom: 0;
+    right: 0;
+}
+
+#sobreMim .containerSobreMim {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sobreMim .titleSobreMim {
+    font-family: var(--fontFamily-title_1);
+    font-size: 2rem;
+    margin-top: 80px;
+}
+
+#sobreMim .subtitleSobreMim {
+    font-family: var(--fontFamily-title_2);
+    background: linear-gradient(to right, var(--cor-principal_1), var(--cor-principal_2));
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
+}
+
+#sobreMim .conteudo {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: .5rem;
+}
+
+#sobreMim .conteudo .texts {
+    max-width: 900px;
+}
+
+#sobreMim .conteudo .img img {
+    height: 500px;
+}
+
+#sobreMim .conteudo .cardTexts {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+#sobreMim .conteudo .miniTitleTextMim {
+    font-family: var(--fontFamily-title_1);
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+#sobreMim .conteudo .textMim {
+    font-family: var(--fontFamily-regular_2);
+}
+
+#sobreMim .conteudo .textMim .dtqEu0 {
+    color: var(--cor-principal_1);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+#sobreMim .conteudo .textMim .dtqEu00 {
+    color: var(--cor-principal_2);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+#sobreMim .conteudo .textMim .dtqEu1 {
+    color: var(--cor-secundario_1);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+#sobreMim .conteudo .textMim .dtqEu2 {
+    color: var(--cor-secundario_2);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+#sobreMim .conteudo .textMim .dtqEu3 {
+    color: var(--cor-secundario_3);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+#sobreMim .conteudo .textMim .dtqEu4 {
+    color: var(--cor-secundario_4);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+/* Fim SobreMim */
+
+/* Começo SobreProjeto */
+
+#sobreProjeto {
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(to bottom, var(--cor-principal_1), var(--cor-principal_2));
+}
+
+#sobreProjeto .containerSobreProjeto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sobreProjeto .titleSobreProjeto {
+    font-family: var(--fontFamily-title_1);
+    color: var(--cor-white);
+    font-size: 2rem;
+    margin-top: 80px;
+}
+
+#sobreProjeto .subtitleSobreProjeto {
+    font-family: var(--fontFamily-title_2);
+    color: var(--cor-white);
+    font-size: 1.5rem;
+}
+
+#sobreProjeto .conteudo {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#sobreProjeto .conteudo .cards {
+    background-color: var(--cor-principal_2);
+    width: 300px;
+    height: 500px;
+    margin: 0 1rem;
+    border-radius: 1rem;
+}
+
+#sobreProjeto .conteudo .containerCards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sobreProjeto .conteudo .miniTitleCard {
+    font-family: var(--fontFamily-title_2);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: var(--cor-secundario_2);
+}
+
+#sobreProjeto .conteudo .textCard {
+    color: var(--cor-secundario_3);
+    margin: 0 1rem;
+}
+
+#sobreProjeto .conteudo .dtqPj2 {
+    color: var(--cor-white);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+#sobreProjeto .conteudo .dtqPj3 {
+    color: var(--cor-black);
+    text-shadow: .5px 0px 1px var(--cor-cinza);
+    font-weight: bold;
+}
+
+#sobreProjeto .conteudo .dtqPj1 {
+    color: var(--cor-secundario_1);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+#sobreProjeto .conteudo .dtqPj4 {
+    color: var(--cor-secundario_4);
+    text-shadow: 1px 1px 1px var(--cor-black);
+    font-weight: bold;
+}
+
+/* Fim sobreProjeto */
+
+/* Começo meusJogos */
+
+#meusJogos {
+    width: 100%;
+    height: 800px;
+}
+
+#meusJogos .containerMeusJogos {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#meusJogos .titleMeusJogos {
+    font-family: var(--fontFamily-title_1);
+    font-size: 2rem;
+    margin-top: 80px;
+}
+
+#meusJogos .subtitleMeusJogos {
+    font-family: var(--fontFamily-title_2);
+    font-size: 1.5rem;
+}
+
+#meusJogos .conteudo {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    margin-top: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+#meusJogos .conteudo .arrowLeft,
+#meusJogos .conteudo .arrowRight {
+    width: 10%;
+}
+
+#meusJogos .conteudo .arrowLeft img, 
+#meusJogos .conteudo .arrowRight img {
+    width: 100%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#meusJogos .conteudo .arrowLeft img:hover, 
+#meusJogos .conteudo .arrowRight img:hover {
+    transform: scale(1.1);
+}
+
+#meusJogos .conteudo .jogoSelecionado {
+    width: 80%;
+    height: 90%;
+    height: fit-content;
+    margin-top: 1rem;
+    background-color: var(--cor-cinza);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meusJogos .jogoSelecionado .containerJogoSelecionado {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#meusJogos .titleJogo {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#meusJogos .sobreJogo {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#meusJogos .sobreJogo .carrossel {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#meusJogos .sobreJogo .carrossel .img {
+    width: 100%;
+}
+
+#meusJogos .sobreJogo .carrossel .img img {
+    width: 100%;
+}
+
+#meusJogos .sobreJogo .setas {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#meusJogos .sobreJogo .setas img {
+    width: 25%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#meusJogos .sobreJogo .setas img:hover {
+    transform: scale(1.1);
+}
+
+#meusJogos .sobreJogo .texts {
+    width: 55%;
+}
+
+#meusJogos .sobreJogo .texts .miniTitleJogo {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Fim meusJogos */
+
+/* Começo contato */
+
+#contato {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom, var(--cor-principal_2), var(--cor-principal_1));
+}
+
+#contato .containerContato {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-white);
+}
+
+#contato .titleContato {
+    font-family: var(--fontFamily-title_1);
+    font-size: 2rem;
+    margin-top: 80px;
+}
+
+#contato .subtitleContato {
+    font-family: var(--fontFamily-title_2);
+    font-size: 1rem;
+    text-align: center;
+}
+
+#contato .conteudo {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#contato .conteudo .redes {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#contato .conteudo .redes img {
+    width: 50px;
+    margin: 0 .4rem;
+    transition: .5s;
+}
+
+#contato .conteudo .redes img:hover {
+    transform: scale(1.1);
+}
+
+#contato .conteudo .formulario {
+    height: 90%;
+    width: 50%;
+}
+
+#contato .conteudo .formulario form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contato .conteudo .formulario input,
+#contato .conteudo .formulario select,
+#contato .conteudo .formulario textarea {
+    width: 100%;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: transparent;
+    margin-bottom: 1rem;
+    font-style: italic;
+    resize: none;
+}
+
+#contato .conteudo .formulario .meiosContatos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contato .conteudo .formulario .meiosContatos #input_emailUsuario,
+#contato .conteudo .formulario .meiosContatos #input_telefoneUsuario {
+    width: 48%;
+}
+
+#contato .conteudo .formulario #input_enviar {
+    font-family: var(--fontFamily-title_1);
+    width: 20%;
+    background-color: var(--cor-secundario_2);
+    color: var(--cor-principal_1);
+    transition: .5s;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#contato .conteudo .formulario #input_enviar:hover {
+    transform: scale(1.1);
+    background-color: var(--cor-secundario_1);
+}
+
+/* Fim contato */
+
+/* Começo footer */
+
+footer {
+    font-family: var(--fontFamily-title_1);
+    width: 100%;
+    height: 200px;
+    background-color: var(--cor-principal_2);
+    color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+}
+
+footer .containerFooter {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .logo img {
+    height: 95%;
+}
+
+footer .creditos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+footer .creditos .nome {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+footer .contatoDireto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+footer .contatoDireto span:first-child {
+    font-size: 1.3rem;
 }
