@@ -17,22 +17,23 @@ function cadastrar(req, res) {
     var msg = req.body.mensagemServer
 
     if (nome == undefined) {
-        return res.status(400).send("Seu nome está undefined!")
+        res.status(400).send("Seu nome está undefined!")
     } else if (email == undefined) {
-        return res.status(400).send("Seu email está undefined!")
+        res.status(400).send("Seu email está undefined!")
     } else if (telefone == undefined) {
-        return res.status(400).send("Seu telefone está undefined!")
+        res.status(400).send("Seu telefone está undefined!")
     } else if (tema == undefined) {
-        return res.status(400).send("Seu tema está undefined!")
+        res.status(400).send("Seu tema está undefined!")
     } else if (msg == undefined) {
-        return res.status(400).send("Sua mensagem está undefined!")
+        res.status(400).send("Sua mensagem está undefined!")
+    } else {
+        mensagemModels.cadastrar(nome, email, telefone, tema, msg).then(function(resposta) {
+            res.status(200).send("Mensagem enviada com sucesso")
+        }).catch(function(erro) {
+            res.status(500).json(erro.sqlMessage)
+        })
     }
 
-    mensagemModels.cadastrar(nome, email, telefone, tema, msg).then(function(resposta) {
-        res.status(200).send("Mensagem enviada com sucesso")
-    }).catch(function(erro) {
-        res.status(500).json(erro.sqlMessage)
-    })
 }
 
 

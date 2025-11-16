@@ -178,8 +178,14 @@ main .login .formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     z-index: 2;
+}
+
+main .login .formulario .labelForm {
+    align-self: flex-start;
+    font-weight: bold;
+    margin: 0 0 .5rem .5rem;
 }
 
 main .login .formulario #input_emailUsuario,
@@ -208,6 +214,14 @@ main .login .formulario #input_entrar {
 main .login .formulario #input_entrar:hover {
     background-color: var(--cor-secundario_1);
     transform: scale(1.1);
+}
+
+main .login .formulario #textError {
+    color: var(--cor-secundario_4);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px var(--cor-black);
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 }
 
 main .login .textLink {

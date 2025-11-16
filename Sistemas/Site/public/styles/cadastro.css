@@ -156,8 +156,8 @@ main .cadastro .titleCadastro {
     font-family: var(--fontFamily-title_1);
     font-size: 2.5rem;
     z-index: 2;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-top: .5rem;
+    /* margin-bottom: .5rem; */
 }
 
 main .cadastro .titleCadastro span {
@@ -174,12 +174,30 @@ main .cadastro .subtitleCadastro {
 }
 
 main .cadastro .formulario {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     z-index: 2;
+}
+
+main .cadastro .formulario .containerNickname,
+main .cadastro .formulario .containerNome,
+main .cadastro .formulario .containerSobrenome,
+main .cadastro .formulario .containerEmail,
+main .cadastro .formulario .containerdtNascimento,
+main .cadastro .formulario .containerSenha,
+main .cadastro .formulario .containerConfirmSenha {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+main .cadastro .formulario .labelForm {
+    font-weight: bold;
+    margin: 0 0 .5rem .5rem;
 }
 
 main .cadastro .formulario #input_nicknameUsuario,
@@ -189,13 +207,18 @@ main .cadastro .formulario #input_dtNascUsuario,
 main .cadastro .formulario #input_emailUsuario,
 main .cadastro .formulario #input_senhaUsuario,
 main .cadastro .formulario #input_confirmSenhaUsuario {
-    width: 80%;
+    width: 90%;
     padding: 1rem;
     border-radius: 2rem;
     border: transparent;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
     font-size: .9rem;
     text-align: center;
+}
+
+main .cadastro .formulario #input_nicknameUsuario,
+main .cadastro .formulario #input_emailUsuario {
+    width: 80%;
 }
 
 main .cadastro .formulario .nomesUser,
@@ -205,10 +228,10 @@ main .cadastro .formulario .senhasUser {
     justify-content: space-between;
 }
 
-main .cadastro .formulario #input_nomeUsuario,
-main .cadastro .formulario #input_sobrenomeUsuario,
-main .cadastro .formulario #input_senhaUsuario,
-main .cadastro .formulario #input_confirmSenhaUsuario {
+main .cadastro .formulario .containerNome,
+main .cadastro .formulario .containerSobrenome,
+main .cadastro .formulario .containerSenha,
+main .cadastro .formulario .containerConfirmSenha {
     width: 48%;
 }
 
@@ -226,6 +249,7 @@ main .cadastro .formulario #input_entrar {
     border: transparent;
     cursor: pointer;
     transition: .5s;
+    margin-top: 1rem;
 }
 
 main .cadastro .formulario #input_entrar:hover {
@@ -242,6 +266,7 @@ main .cadastro .textLink {
     z-index: 2;
     font-weight: bold;
     font-size: 1.2rem;
+    margin-top: 2rem;
 }
 
 main .cadastro .textLink a {

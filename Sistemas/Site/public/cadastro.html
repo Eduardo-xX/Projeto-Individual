@@ -51,18 +51,39 @@
                     <span>Crie sua conta e comece a jogar.</span>
                 </div>
                 <div class="formulario">
-                    <input type="text" name="" id="input_nicknameUsuario" placeholder="Nickname">
+                    <div class="containerNickname">
+                        <label class="labelForm" for="input_nicknameUsuario">Nickname:</label>
+                        <input type="text" name="" id="input_nicknameUsuario" placeholder="Zduardo">
+                    </div>
                     <div class="nomesUser">
-                        <input type="text" name="" id="input_nomeUsuario" placeholder="Nome">
-                        <input type="text" name="" id="input_sobrenomeUsuario" placeholder="Sobrenome">
+                        <div class="containerNome">
+                            <label class="labelForm" for="input_nomeUsuario">Nome:</label>
+                            <input type="text" name="" id="input_nomeUsuario" placeholder="Eduardo">
+                        </div>
+                        <div class="containerSobrenome">
+                            <label class="labelForm" for="input_sobrenomeUsuario">Sobrenome:</label>
+                            <input type="text" name="" id="input_sobrenomeUsuario" placeholder="Nascimento">
+                        </div>
                     </div>
-                    <input type="text" name="" id="input_emailUsuario" placeholder="Email">
-                    <input type="text" name="" id="input_dtNascUsuario" placeholder="Data de Nascimento" onfocus="dtNascimento()">
+                    <div class="containerEmail">
+                        <label class="labelForm" for="input_emailUsuario">Email:</label>
+                        <input type="text" name="" id="input_emailUsuario" placeholder="email@gmail.com">
+                    </div>
+                    <div class="containerdtNascimento">
+                        <label class="labelForm" for="input_dtNascUsuario">Data de Nascimento:</label>
+                        <input type="text" name="" id="input_dtNascUsuario" placeholder="10/10/2000" onfocus="dtNascimento()">
+                    </div>
                     <div class="senhasUser">
-                        <input type="password" name="" id="input_senhaUsuario" placeholder="Senha">
-                        <input type="password" name="" id="input_confirmSenhaUsuario" placeholder="Confirme a Senha">
+                        <div class="containerSenha">
+                            <label class="labelForm" for="input_senhaUsuario">Senha:</label>
+                            <input type="password" name="" id="input_senhaUsuario" placeholder="********">
+                        </div>
+                        <div class="containerConfirmSenha">
+                            <label class="labelForm" for="input_confirmSenhaUsuario">Confirme a Senha:</label>
+                            <input type="password" name="" id="input_confirmSenhaUsuario" placeholder="********">
+                        </div>
                     </div>
-                    <input type="submit" name="" id="input_entrar" value="Criar Conta">
+                    <input type="submit" name="" id="input_entrar" value="Criar Conta" onclick="cadastrar()">
                 </div>
             </div>
             <div class="textLink">

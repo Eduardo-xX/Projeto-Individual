@@ -51,9 +51,12 @@
                     <span>Faça login para continuar sua jornada.</span>
                 </div>
                 <div class="formulario">
-                    <input type="text" name="" id="input_emailUsuario" placeholder="Email">
-                    <input type="password" name="" id="input_senhaUsuario" placeholder="Senha">
-                    <input type="submit" name="" id="input_entrar" value="Entrar">
+                    <label class="labelForm" for="input_emailUsuario">Email:</label>
+                    <input type="text" name="" id="input_emailUsuario" placeholder="email@gmail.com">
+                    <label class="labelForm" for="input_senhaUsuario">Senha:</label>
+                    <input type="password" name="" id="input_senhaUsuario" placeholder="********">
+                    <span id="textError"></span>
+                    <input type="submit" name="" id="input_entrar" value="Entrar" onclick="entrar()">
                 </div>
             </div>
             <div class="textLink">
@@ -61,5 +64,7 @@
             </div>
         </div>
     </main>
+
+    <script src="./JS/login.js"></script>
 </body>
 </html>
