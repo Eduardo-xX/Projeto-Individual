@@ -598,7 +598,7 @@ main .conteudo .buttonMain a:hover {
     width: 50%;
 }
 
-#contato .conteudo .formulario form {
+#contato .conteudo .formulario .containerFormulario {
     width: 100%;
     height: 100%;
     display: flex;

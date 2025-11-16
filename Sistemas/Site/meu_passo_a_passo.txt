@@ -1,0 +1,9 @@
+1° comando npm i
+2° trocar o banco de dados no .env.dev
+3° adicionar a linha seguindo o exemplo - var usuarioRouter = require("./src/routes/usuarios");
+4° adicionar a linha seguindo o exemplo - app.use("/usuarios", usuarioRouter);
+5° ir para routes, criar o arquivo e seguir o padrão dos já criados, alterando apenas o nome das coisas
+6° ir para controller, criar o arquivo, (criar o require do próximo passo, nesse caso o do models; criar as funções que irá utilizar; exportar as funções)
+7° ir para models, exporta a função database, cria os funções para armazenar ou puxar do banco de dados (insert e select) após isso exporta as funções
+
+8° caso da mensagem, criar um script pro index, quando clicar no enviar ativar a função criada...

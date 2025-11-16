@@ -227,19 +227,19 @@
                     </a>
                 </div>
                 <div class="formulario">
-                    <form action="post">
+                    <div class="containerFormulario">
                         <input type="text" name="" id="input_nomeUsuario" placeholder="Nome do Usuário">
                         <div class="meiosContatos">
                             <input type="text" name="" id="input_emailUsuario" placeholder="Email para contato">
-                            <input type="number" name="" id="input_telefoneUsuario" placeholder="Telefone para contato">
+                            <input type="text" name="" id="input_telefoneUsuario" placeholder="Telefone para contato">
                         </div>
                         <select name="" id="select_temaMensagem">
                             <option value="#" selected disabled>Selecione uma Opção de Tema</option>
                             <option value="1">...</option>
                         </select>
                         <textarea name="" id="textarea_mensagem" placeholder="Deixe sua mensagem..." rows="5"></textarea>
-                        <input type="submit" name="" id="input_enviar" value="Enviar">
-                    </form>
+                        <input type="submit" name="" id="input_enviar" value="Enviar" onclick="enviarMsg()">
+                    </div class="containerFormulario">
                 </div>
                 <div class="redes">
                     <a href="https://github.com/Eduardo-xX">
@@ -279,5 +279,6 @@
     </footer>
 
     <script src="./JS/script.js"></script>
+    <script src="./JS/scriptContato.js"></script>
 </body>
 </html>

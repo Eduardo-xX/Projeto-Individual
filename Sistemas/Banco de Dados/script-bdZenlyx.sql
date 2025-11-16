@@ -16,7 +16,10 @@ CREATE TABLE mensagem (
 idMensagem INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45),
 email VARCHAR(320),
-telefone CHAR(11),
+telefone CHAR(15),
 tema VARCHAR(45),
-mensagem VARCHAR(500)
+mensagem VARCHAR(500),
+dtMensagem DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+SELECT * FROM mensagem;
