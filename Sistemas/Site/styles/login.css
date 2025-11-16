@@ -1,0 +1,231 @@
+/* Criação de algumas variáveis para facilitar a manutenção no código */
+:root {
+    --cor-principal_1: #2B0461;
+    --cor-principal_2: #191960;
+    --cor-secundario_1: #F5E663;
+    --cor-secundario_2: #00FFAD;
+    --cor-secundario_3: #FFAB69;
+    --cor-secundario_4: #9C3848;
+    --cor-white: #ffffff;
+    --cor-black: #000000;
+    --cor-cinza: #D9D9D9;
+    --fontFamily-title_1: Poppins, sans-serif;
+    --fontFamily-title_2: Orbitron, sans-serif;
+    --fontFamily-regular_1: Inter, sans-serif;
+    --fontFamily-regular_2: "Open Sans", sans-serif;
+}
+/* zerando a margin e padding do site */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontFamily-regular_1);
+    background: url(../assets/fundo_login-2.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Começo do Header */
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    background-color: var(--cor-principal_2);
+    z-index: 30;
+}
+
+header .containerHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+header .logo {
+    height: 90%;
+}
+
+header .logo img {
+    height: 100%;
+}
+
+header .atalhos {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .atalhos span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .atalhos a {
+    font-family: var(--fontFamily-regular_2);
+    text-decoration: none;
+    color: var(--cor-white);
+    padding: .5rem 1rem;
+    transition: .5s;
+    border-radius: 1rem;
+    font-style: italic;
+}
+
+header .atalhos a:hover {
+    background-color: #0000008a;
+    transform: scale(1.1);
+}
+
+header .buttons {
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .buttons a {
+    text-decoration: none;
+    font-family: var(--fontFamily-title_1);
+    color: var(--cor-principal_2);
+    background-color: var(--cor-secundario_2);
+    padding: 0 1rem;
+    border-radius: 1rem;
+    transition: .8s ease;
+    border: 2px solid transparent;
+}
+
+header .buttons a:nth-child(2n) {
+    margin-left: 3rem;
+}
+
+header .buttons a:hover {
+    background-color: var(--cor-secundario_1);
+    transform: scale(1.2);
+    background: linear-gradient(to right, var(--cor-secundario_1), var(--cor-secundario_1)) padding-box, linear-gradient(to right, var(--cor-secundario_2 ), var(--cor-secundario_4)) border-box;
+}
+
+/* Fim Header */
+
+/* Começo Main */
+
+main .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+}
+
+main .login .overlayLogin {
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-white);
+    opacity: 20%;
+    position: absolute;
+    border-radius: 2rem;
+}
+
+main .login .containerLogin {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 25px;
+}
+
+main .login .titleLogin {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.8rem;
+    z-index: 2;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+main .login .titleLogin span {
+    background: linear-gradient(to right, var(--cor-principal_1), var(--cor-principal_2));
+    background-clip: text;
+    color: transparent;
+}
+
+main .login .subtitleLogin {
+    font-family: var(--fontFamily-title_1);
+    font-size: .8rem;
+    z-index: 2;
+    font-weight: bold;
+}
+
+main .login .formulario {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+    z-index: 2;
+}
+
+main .login .formulario #input_emailUsuario,
+main .login .formulario #input_senhaUsuario {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: transparent;
+    margin-bottom: 1.5rem;
+    font-size: .9rem;
+    text-align: center;
+}
+
+main .login .formulario #input_entrar {
+    background-color: var(--cor-secundario_2);
+    color: var(--cor-principal_2);
+    font-family: var(--fontFamily-title_1);
+    padding: .5rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: .8rem;
+    border: transparent;
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .login .formulario #input_entrar:hover {
+    background-color: var(--cor-secundario_1);
+    transform: scale(1.1);
+}
+
+main .login .textLink {
+    width: 80%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-weight: bold;
+}
+
+main .login .textLink a {
+    text-decoration: none;
+    color: var(--cor-secundario_2);
+    /* transition: .5s; */
+}
+
+main .login .textLink a:hover {
+    color: var(--cor-secundario_1);
+}

@@ -1,0 +1,22 @@
+USE bdZenlyx;
+SHOW TABLES;
+
+CREATE TABLE usuario (
+idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+nickname VARCHAR(45) UNIQUE NOT NULL,
+nome VARCHAR(45),
+sobrenome VARCHAR(45),
+dtNasc DATE,
+email VARCHAR(320),
+senha VARCHAR(45),
+dtCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE mensagem (
+idMensagem INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45),
+email VARCHAR(320),
+telefone CHAR(11),
+tema VARCHAR(45),
+mensagem VARCHAR(500)
+);

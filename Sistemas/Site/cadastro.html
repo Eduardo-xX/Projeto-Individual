@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenlyx - Faça seu Cadastro</title>
+    <link rel="stylesheet" href="./styles/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <div class="containerHeader">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo">
+            </div>
+            <div class="atalhos">
+                <span>
+                    <a href="./index.html#home">Home</a>
+                </span>
+                <span>
+                    <a href="./index.html#sobreMim">Sobre Mim</a>
+                </span>
+                <span>
+                    <a href="./index.html#sobreProjeto">Sobre o Projeto</a>
+                </span>
+                <span>
+                    <a href="./index.html#meusJogos">Meus Jogos</a>
+                </span>
+                <span>
+                    <a href="./index.html#contato">Contato</a>
+                </span>
+            </div>
+            <div class="buttons">
+                <a href="./login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cadastro">
+            <div class="overlayCadastro"></div>
+            <div class="containerCadastro">
+                <div class="titleCadastro">
+                    <span>⭐ Bem-vindo!⭐ </span>
+                </div>
+                <div class="subtitleCadastro">
+                    <span>Crie sua conta e comece a jogar.</span>
+                </div>
+                <div class="formulario">
+                    <input type="text" name="" id="input_nicknameUsuario" placeholder="Nickname">
+                    <div class="nomesUser">
+                        <input type="text" name="" id="input_nomeUsuario" placeholder="Nome">
+                        <input type="text" name="" id="input_sobrenomeUsuario" placeholder="Sobrenome">
+                    </div>
+                    <input type="text" name="" id="input_emailUsuario" placeholder="Email">
+                    <input type="text" name="" id="input_dtNascUsuario" placeholder="Data de Nascimento" onfocus="dtNascimento()">
+                    <div class="senhasUser">
+                        <input type="password" name="" id="input_senhaUsuario" placeholder="Senha">
+                        <input type="password" name="" id="input_confirmSenhaUsuario" placeholder="Confirme a Senha">
+                    </div>
+                    <input type="submit" name="" id="input_entrar" value="Criar Conta">
+                </div>
+            </div>
+            <div class="textLink">
+                <span>Já tem uma conta? <a href="./login.html">[Entrar]</a></span>
+            </div>
+        </div>
+    </main>
+
+    <script src="./JS/cadastro.js"></script>
+</body>
+</html>
