@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenlyx - Faitimentos</title>
+    <link rel="stylesheet" href="./styles/faitimentos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <div class="containerHeader">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo">
+            </div>
+            <div class="titleTelaJogos">
+                <h1>Faitimentos</h1>
+            </div>
+            <div class="menus">
+                <img src="./assets/Perfil.png" alt="Perfil">
+                <img src="./assets/Menu.png" alt="Menu">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="headerGame">
+            <div class="containerHeaderGame">
+                <div class="iconPerfil">
+                    <img src="./assets/iconPerfil.png" alt="Perfil do Usuário no Jogo">
+                </div>
+                <div class="nivel">
+                    <span>Nível 0</span>
+                </div>
+                <div class="classes">
+                    <img src="./assets/Zap.png" alt="Raio para entrar na Tela de Classes">
+                </div>
+            </div>
+        </div>
+        <div class="conteudoGame">
+            <div class="containerConteudoGame">
+                <div class="topStatus">
+                    <div class="containerTopStatus">
+                        <div class="containerChangeEquipamento">
+                            <span class="changeEquipamento">Alterar</span>
+                        </div>
+                        <div class="containerXpAtual">
+                            <span class="xpAtual">XP: 100</span>
+                        </div>
+                        <div class="containerNadaStatus">
+                            <span class="nada"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainStatus">
+                    <div class="containerMainStatus">
+                        <div class="status">
+                            <div class="containerStatus">
+                                <div class="containerMiniTitleStatus">
+                                    <span class="miniTitleStatus">STATUS</span>
+                                </div>
+                                <div class="containerStatusAtuais">
+                                    <div class="statusForca containerLineStatus">
+                                        <span>Força:</span>
+                                        <span>3</span>
+                                    </div>
+                                    <div class="statusDefesa containerLineStatus">
+                                        <span>Defesa:</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="statusVida containerLineStatus">
+                                        <span>Vida:</span>
+                                        <span>15</span>
+                                    </div>
+                                    <div class="statusVelocidade containerLineStatus">
+                                        <span>Velocidade:</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="statusCritico containerLineStatus">
+                                        <span>Crítico:</span>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="statusChanceCritico containerLineStatus">
+                                        <span>Chance Crítico:</span>
+                                        <span>2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grafico">
+                            <div class="containerGrafico">
+                                <!-- <div class="nada">
+                                    <span class="nada"></span>
+                                </div> -->
+                                <div class="containerMyGrafico">
+                                    <canvas id="myGrafico"></canvas>
+                                </div>
+                                <div class="containerDashboard">
+                                    <span class="dashboard">Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="upgrade">
+                            <div class="containerUpgrade">
+                                <div class="containerMiniTitleUpgrade">
+                                    <span class="miniTitleUpgrade">Upgrade</span>
+                                </div>
+                                <div class="containersTextsValorsUpgrades">
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Força</span>
+                                            <span>30XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Força">
+                                        </div>
+                                    </div>
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Defesa</span>
+                                            <span>10XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Defesa">
+                                        </div>
+                                    </div>
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Vida</span>
+                                            <span>12XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Vida">
+                                        </div>
+                                    </div>
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Velocidade</span>
+                                            <span>10XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Velocidade">
+                                        </div>
+                                    </div>
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Crítico</span>
+                                            <span>100XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Crítico">
+                                        </div>
+                                    </div>
+                                    <div class="containerTextValorUpgrade">
+                                        <div class="containerTextValor">
+                                            <span>Chance Crítico</span>
+                                            <span>300XP</span>
+                                        </div>
+                                        <div class="containerLineUpgrade">
+                                            <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Chance Crítico">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomStatus">
+                    <div class="containerBottomStatus">
+                        <div class="containerClassAtual">
+                            <span class="classAtual">Classe</span>
+                        </div>
+                        <div class="containerMidNada">
+                            <span class="nada"></span>
+                        </div>
+                        <div class="containerEndNada">
+                            <span class="nada"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerGame">
+            <div class="containerFooterGame">
+                <div class="containerImg">
+                    <img src="./assets/imgEmBreve1.png" alt="Botão para uma nova tela, em breve">
+                    <span class="textImg">Em Breve</span>
+                    <span></span>
+                </div>
+                <div class="containerImg">
+                    <img src="./assets/status.png" alt="Botão para tela de Status">
+                    <span class="textImg">Status</span>
+                    <span></span>
+                </div>
+                <div class="containerImg">
+                    <img src="./assets/home.png" alt="Botão para tela Home">
+                    <span class="textImg">Home</span>
+                    <span></span>
+                </div>
+                <div class="containerImg">
+                    <img src="./assets/tower.png" alt="Botão para uma nova tela, em breve">
+                    <span class="textImg">Em Breve</span>
+                    <span></span>
+                </div>
+                <div class="containerImg">
+                    <img src="./assets/guilda.png" alt="Botão para uma nova tela, em breve">
+                    <span class="textImg">Em Breve</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./JS/faitimentos.js"></script>
+</body>
+</html>

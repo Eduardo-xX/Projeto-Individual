@@ -1,0 +1,409 @@
+/* Criação de algumas variáveis para facilitar a manutenção no código */
+:root {
+    --cor-principal_1: #2B0461;
+    --cor-principal_2: #191960;
+    --cor-secundario_1: #F5E663;
+    --cor-secundario_2: #00FFAD;
+    --cor-secundario_3: #FFAB69;
+    --cor-secundario_4: #9C3848;
+    --cor-game1: #14283F;
+    --cor-white: #ffffff;
+    --cor-black: #000000;
+    --cor-cinza: #D9D9D9;
+    --fontFamily-title_1: Poppins, sans-serif;
+    --fontFamily-title_2: Orbitron, sans-serif;
+    --fontFamily-regular_1: Inter, sans-serif;
+    --fontFamily-regular_2: "Open Sans", sans-serif;
+}
+/* zerando a margin e padding do site */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontFamily-regular_1);
+    background-color: var(--cor-principal_1);
+    display: flex;
+    justify-content: center;
+}
+
+/* Começo do Header */
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    background-color: var(--cor-principal_2);
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+}
+
+header .containerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+}
+
+header .logo {
+    width: 150px;
+    height: 90%;
+}
+
+header .logo img {
+    height: 100%;
+}
+
+header .titleTelaJogos {
+    font-family: var(--fontFamily-title_1);
+    color: var(--cor-white);
+}
+
+header .menus {
+    width: 150px;
+}
+
+header .menus img {
+    margin: .5rem;
+}
+
+/* Fim Header */
+
+/* Começo Main */
+
+main {
+    margin-top: 80px;
+    width: 1200px;
+}
+
+main .headerGame {
+    width: 100%;
+    height: 70px;
+    background-color: var(--cor-cinza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .containerHeaderGame {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .containerHeaderGame .nivel {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.5rem;
+}
+
+main .conteudoGame {
+    width: 100%;
+    height: 600px;
+    /* background: url(../assets/fundoGame1.png);
+    background-size: cover; */
+}
+
+/* Começo Tela Status */
+
+main .conteudoGame {
+    background-color: var(--cor-game1);
+}
+
+main .conteudoGame .containerConteudoGame {
+    width: 100%;
+    height: 90%;
+    padding-top: 3rem;
+}
+
+/* Começo topStatus */
+
+main .conteudoGame .topStatus {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .topStatus .containerTopStatus {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .containerTopStatus .containerChangeEquipamento,
+main .containerTopStatus .containerNadaStatus,
+main .containerTopStatus .containerXpAtual {
+    width: 100px;
+    height: min-content;
+    padding: .5rem 0;
+    background-color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+
+main .containerTopStatus .containerXpAtual {
+    width: 200px;
+}
+
+main .containerTopStatus .containerNadaStatus {
+    background-color: transparent;
+}
+
+/* Fim topStatus */
+
+/* Começo mainStatus */
+
+main .conteudoGame .mainStatus {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+main .mainStatus .containerMainStatus {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Começo StatusAtuais */
+
+main .containerMainStatus .status {
+    width: 300px;
+    height: 300px;
+}
+
+main .containerMainStatus .containerStatus {
+    width: 100%;
+    height: 100%;
+    color: var(--cor-white);
+}
+
+main .containerStatus .containerMiniTitleStatus {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .containerStatus .containerStatusAtuais {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+main .containerStatus .containerStatusAtuais::-webkit-scrollbar {
+    display: none;
+}
+
+main .containerStatus .containerLineStatus {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Fim StatusAtuais */
+
+/* Começo Gráfico */
+
+main .containerMainStatus .grafico {
+    width: 300px;
+    height: 300px;
+}
+
+main .grafico .containerGrafico {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .containerGrafico .containerMyGrafico {
+    width: 200px;
+    height: 200px;
+    /* background-color: var(--cor-white);
+    border-radius: 50%; */
+}
+
+main .containerGrafico .containerDashboard {
+    width: 150px;
+    background-color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+
+/* Fim Gráfico */
+
+/* Começo Upgrade */
+
+main .containerMainStatus .upgrade {
+    width: 300px;
+    height: 300px;
+}
+
+main .containerMainStatus .containerUpgrade {
+    width: 100%;
+    height: 100%;
+    color: var(--cor-white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main .containerUpgrade .containerMiniTitleUpgrade {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .containerUpgrade .containersTextsValorsUpgrades {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+main .containerUpgrade .containersTextsValorsUpgrades::-webkit-scrollbar {
+    display: none;
+}
+
+main .containerUpgrade .containerTextValorUpgrade {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .containerUpgrade  .containerTextValor {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .containerUpgrade .containerLineUpgrade {
+    width: 15%;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+    background-color: var(--cor-white);
+}
+
+/* Fim Upgrade */
+
+/* Fim mainStatus */
+
+/* Começa bottomStatus */
+
+main .bottomStatus {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .bottomStatus .containerBottomStatus {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .containerBottomStatus .containerClassAtual,
+main .containerBottomStatus .containerMidNada,
+main .containerBottomStatus .containerEndNada {
+    width: 100px;
+    height: min-content;
+    padding: .5rem 0;
+    background-color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+
+main .containerBottomStatus .containerMidNada {
+    width: 200px;
+}
+
+main .containerBottomStatus .containerMidNada,
+main .containerBottomStatus .containerEndNada {
+    background-color: transparent;
+}
+
+/* Começo footerGame */
+
+main .footerGame {
+    width: 100%;
+    height: 120px;
+    background-color: var(--cor-cinza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .footerGame .containerFooterGame {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .containerFooterGame .containerImg {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+main .containerImg img {
+    margin-bottom: 1rem;
+}
+
+main .containerFooterGame .containerImg .textImg {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Fim footerGame */
+
+/* Fim Main */

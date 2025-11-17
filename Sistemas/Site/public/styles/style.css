@@ -444,11 +444,12 @@ main .conteudo .buttonMain a:hover {
     margin-top: 2rem;
     margin: 0 auto;
     align-items: center;
+    justify-content: center;
 }
 
 #meusJogos .conteudo .arrowLeft,
 #meusJogos .conteudo .arrowRight {
-    width: 10%;
+    width: 5%;
 }
 
 #meusJogos .conteudo .arrowLeft img, 
@@ -466,7 +467,6 @@ main .conteudo .buttonMain a:hover {
 #meusJogos .conteudo .jogoSelecionado {
     width: 80%;
     height: 90%;
-    height: fit-content;
     margin-top: 1rem;
     background-color: var(--cor-cinza);
     border-radius: 1rem;
@@ -518,7 +518,7 @@ main .conteudo .buttonMain a:hover {
 }
 
 #meusJogos .sobreJogo .setas img {
-    width: 25%;
+    width: 10%;
     cursor: pointer;
     transition: .5s;
 }
@@ -537,6 +537,16 @@ main .conteudo .buttonMain a:hover {
     font-weight: bold;
     display: block;
     margin-bottom: 1rem;
+}
+
+#meusJogos .sobreJogo .texts .textJogo {
+    display: inline-block;
+    height: 300px;
+    overflow-y: auto;
+}
+
+#meusJogos .sobreJogo .texts .textJogo::-webkit-scrollbar {
+    display: none;
 }
 
 /* Fim meusJogos */

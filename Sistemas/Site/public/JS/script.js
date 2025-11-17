@@ -1,3 +1,23 @@
+var textJogoClickerLizard = `
+    Primeiro jogo que eu realmente tentei focar para desenvolver.
+    <br>
+    Comecei ele para praticar programação e desenvolver novas habilidades. 
+    <br>
+    Tenho ele comitado no meu Github pessoal, espero um dia conseguir continuar desenvolvendo ele pois tive que pausar quando entrei na SPTECH.
+    <br><br>
+    Ele é um jogo clicker, com sistema de level e autoclick já implementados, antes de eu parar de desenvolve-lo eu estava implementando um sistema de personagem e bosses.
+    <br>
+    Você conseguiria upar seus status e após chegar a um certo level iria desbloquear o boss para derrotá-lo.
+    <br>
+    Após derrotar esse boss você iria desbloquear 3 novos upgrades:
+    <br>
+    1° para upar e aumentar a quantidade de pontos que o boss iria te dar,
+    <br>
+    2° para upar e aumentar a quantidade de tempo da sequencia de pontos gerados,
+    <br>
+    3° para upar e diminuir o delay que este boss iria te gerar na sequencia de pontos.
+`
+
 var listaImgJogoClickerLizard = ['/assets/clickerLizard1.png', '/assets/clickerLizard2.png', '/assets/clickerLizard3.png', '/assets/clickerLizard4.png', '/assets/clickerLizard5.png']
 
 var listaImgJogoFaitimentos = ['/assets/imgTest1.png', '/assets/imgTest2.png', '/assets/imgTest3.png', '/assets/imgTest4.png', '/assets/imgTest5.png', '/assets/imgTest6.png']
@@ -5,7 +25,7 @@ var listaImgJogoFaitimentos = ['/assets/imgTest1.png', '/assets/imgTest2.png', '
 var listaImgJogosAtuais = ['/assets/clickerLizard1.png', '/assets/clickerLizard2.png', '/assets/clickerLizard3.png', '/assets/clickerLizard4.png', '/assets/clickerLizard5.png']
 
 var listaJogos = [
-    ['Clicker Lizard', 'Em Desenvolvimento...', 'Textinho do Lizard <br>textinho', listaImgJogoClickerLizard], 
+    ['Clicker Lizard', 'Em Desenvolvimento...', textJogoClickerLizard, listaImgJogoClickerLizard], 
     ['Faitimentos', 'Em Desenvolvimento', 'Textinho do Faitimentos<br>muito bom o jogo', listaImgJogoFaitimentos]
 ]
 
@@ -30,7 +50,7 @@ function alterarJogoRight() {
     saveI++
     titleJogo.innerText = listaJogos[saveI][0]
     miniTitleJogo.innerText = listaJogos[saveI][1]
-    textJogo.innerText = listaJogos[saveI][2]
+    textJogo.innerHTML = listaJogos[saveI][2]
     listaImgJogosAtuais = listaJogos[saveI][3]
 
     alterarImagemJogoRight()
@@ -57,7 +77,7 @@ function alterarJogoLeft() {
     saveI--
     titleJogo.innerText = listaJogos[saveI][0]
     miniTitleJogo.innerText = listaJogos[saveI][1]
-    textJogo.innerText = listaJogos[saveI][2]
+    textJogo.innerHTML = listaJogos[saveI][2]
     listaImgJogosAtuais = listaJogos[saveI][3]
 
     alterarImagemJogoRight()
@@ -78,7 +98,7 @@ function alterarImagemJogoRight() {
             saveI = -1
         }
     }
-    img.src = listaImgJogosAtuais[saveI + 1]
+    img.src = '.' + listaImgJogosAtuais[saveI + 1]
 }
 
 function alterarImagemJogoLeft() {
@@ -96,5 +116,5 @@ function alterarImagemJogoLeft() {
             saveI = listaImgJogosAtuais.length
         }
     }
-    img.src = listaImgJogosAtuais[saveI - 1]
+    img.src = '.' + listaImgJogosAtuais[saveI - 1]
 }
