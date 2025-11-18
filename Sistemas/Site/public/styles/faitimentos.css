@@ -320,6 +320,16 @@ main .containerUpgrade .containerLineUpgrade {
     align-items: center;
     margin-bottom: .5rem;
     background-color: var(--cor-white);
+    transition: .5s;
+}
+
+main .containerUpgrade .containerLineUpgrade:hover {
+    background-color: var(--cor-principal_1);
+    transform: scale(1.05);
+}
+
+main .containerUpgrade .containerLineUpgrade:active {
+    transform: scale(1.2);
 }
 
 /* Fim Upgrade */
@@ -343,7 +353,7 @@ main .bottomStatus .containerBottomStatus {
     justify-content: space-between;
 }
 
-main .containerBottomStatus .containerClassAtual,
+main .containerBottomStatus .containerClasseAtual,
 main .containerBottomStatus .containerMidNada,
 main .containerBottomStatus .containerEndNada {
     width: 100px;

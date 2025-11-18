@@ -35,7 +35,8 @@
                     <img src="./assets/iconPerfil.png" alt="Perfil do Usuário no Jogo">
                 </div>
                 <div class="nivel">
-                    <span>Nível 0</span>
+                    <span>Nível</span>
+                    <span id="idNivelAtual">1</span>
                 </div>
                 <div class="classes">
                     <img src="./assets/Zap.png" alt="Raio para entrar na Tela de Classes">
@@ -50,7 +51,8 @@
                             <span class="changeEquipamento">Alterar</span>
                         </div>
                         <div class="containerXpAtual">
-                            <span class="xpAtual">XP: 100</span>
+                            <span>XP:</span>
+                            <span id="idXpAtual" class="xpAtual">100</span>
                         </div>
                         <div class="containerNadaStatus">
                             <span class="nada"></span>
@@ -67,27 +69,27 @@
                                 <div class="containerStatusAtuais">
                                     <div class="statusForca containerLineStatus">
                                         <span>Força:</span>
-                                        <span>3</span>
+                                        <span id="idDanoAtual">3</span>
                                     </div>
                                     <div class="statusDefesa containerLineStatus">
                                         <span>Defesa:</span>
-                                        <span>1</span>
+                                        <span id="idDefesaAtual">1</span>
                                     </div>
                                     <div class="statusVida containerLineStatus">
                                         <span>Vida:</span>
-                                        <span>15</span>
+                                        <span id="idVidaAtual">15</span>
                                     </div>
                                     <div class="statusVelocidade containerLineStatus">
                                         <span>Velocidade:</span>
-                                        <span>1</span>
+                                        <span id="idVelocidadeAtual">1</span>
                                     </div>
                                     <div class="statusCritico containerLineStatus">
                                         <span>Crítico:</span>
-                                        <span>1</span>
+                                        <span id="idCriticoAtual">1</span>
                                     </div>
                                     <div class="statusChanceCritico containerLineStatus">
                                         <span>Chance Crítico:</span>
-                                        <span>2%</span>
+                                        <span id="idChanceCriticoAtual">2%</span>
                                     </div>
                                 </div>
                             </div>
@@ -114,54 +116,72 @@
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Força</span>
-                                            <span>30XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeDano">30</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(1)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Força">
                                         </div>
                                     </div>
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Defesa</span>
-                                            <span>10XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeDefesa">10</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(2)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Defesa">
                                         </div>
                                     </div>
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Vida</span>
-                                            <span>12XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeVida">12</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(3)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Vida">
                                         </div>
                                     </div>
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Velocidade</span>
-                                            <span>10XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeVelocidade">10</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(4)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Velocidade">
                                         </div>
                                     </div>
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Crítico</span>
-                                            <span>100XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeCritico">100</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(5)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Crítico">
                                         </div>
                                     </div>
                                     <div class="containerTextValorUpgrade">
                                         <div class="containerTextValor">
                                             <span>Chance Crítico</span>
-                                            <span>300XP</span>
+                                            <div class="textUpgradeXP">
+                                                <span id="idUpgradeChanceCritico">300</span>
+                                                <span>XP</span>
+                                            </div>
                                         </div>
-                                        <div class="containerLineUpgrade">
+                                        <div class="containerLineUpgrade" onclick="uparAlgo(6)">
                                             <img class="buttonUpgrade" src="./assets/+.png" alt="Botão de Upgrade de Chance Crítico">
                                         </div>
                                     </div>
@@ -172,8 +192,8 @@
                 </div>
                 <div class="bottomStatus">
                     <div class="containerBottomStatus">
-                        <div class="containerClassAtual">
-                            <span class="classAtual">Classe</span>
+                        <div class="containerClasseAtual">
+                            <span id="idClasseAtual" class="classeAtual">Classe</span>
                         </div>
                         <div class="containerMidNada">
                             <span class="nada"></span>
@@ -217,6 +237,6 @@
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./JS/faitimentos.js"></script>
+    <script src="./JS/faitimentos.js" type="module"></script>
 </body>
 </html>
