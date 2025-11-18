@@ -2,6 +2,7 @@ import { personagem } from "./personagem/personagem.js";
 import { calcularValorUpgradeChanceCritico, calcularValorUpgradeCritico, calcularValorUpgradeDano, calcularValorUpgradeDefesa, calcularValorUpgradeVelocidade, calcularValorUpgradeVida, upgradeChanceCritico, upgradeCritico, upgradeDano, upgradeDefesa, upgradeVelocidade, upgradeVida } from "./personagem/upgradePersonagem.js";
 
 attStatusAtuais()
+attGrafico()
 
 
 
@@ -88,31 +89,37 @@ window.uparAlgo = function(qual) {
         attStatusDano()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     } else if (qual == 2) {
         upgradeDefesa()
         attStatusDefesa()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     } else if (qual == 3) {
         upgradeVida()
         attStatusVida()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     } else if (qual == 4) {
         upgradeVelocidade()
         attStatusVelocidade()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     } else if (qual == 5) {
         upgradeCritico()
         attStatusCritico()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     } else if (qual == 6) {
         upgradeChanceCritico()
         attStatusChanceCritico()
         attUpgradeStatus()
         attStatusXp()
+        attGrafico()
     }
 }
 
@@ -142,25 +149,41 @@ window.uparAlgo = function(qual) {
 
 
 
+function attGrafico() {
+    var statusPersonagemAtual = [
+        personagem.defesa,
+        personagem.vida,
+        personagem.velocidade,
+        personagem.critico,
+        personagem.chanceCritico,
+        personagem.dano
+    ]
 
+    var limiteStatusClasse = [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+    ]
 
-const ctx = document.getElementById('myGrafico');
-
+    const ctx = document.getElementById('myGrafico');
+    
     new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
-                'Eating',
-                'Drinking',
-                'Sleeping',
-                'Designing',
-                'Coding',
-                'Cycling',
-                'Running'
+                'Defesa',
+                'Vida',
+                'Velocidade',
+                'Crítico',
+                'Chance Crítico',
+                'Força'
             ],
             datasets: [{
-                label: 'My First Dataset',
-                data: [65, 59, 90, 81, 56, 55, 40],
+                label: 'Status Personagem',
+                data: statusPersonagemAtual,
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -169,8 +192,8 @@ const ctx = document.getElementById('myGrafico');
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgb(255, 99, 132)'
             }, {
-                label: 'My Second Dataset',
-                data: [28, 48, 40, 19, 96, 27, 100],
+                label: 'Max Status Classe',
+                data: limiteStatusClasse,
                 fill: true,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgb(54, 162, 235)',
@@ -188,3 +211,4 @@ const ctx = document.getElementById('myGrafico');
             }
         },
     });
+}

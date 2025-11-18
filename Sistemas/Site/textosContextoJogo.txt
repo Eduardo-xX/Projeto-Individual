@@ -1,0 +1,7 @@
+Em questão dos status, estou pensando em colocar naquela tela onde tem o STATUS e UPGRADE, no STATUS ser o nível de cada STATUS, e funcionar na seguinte maneira:
+Força: 1 Nível = 2 Dano
+Defesa: 1 Nível = 1 Defesa
+Vida: 1 Nível = 5 Vida
+Velocidade: 1 Nível = 1 Velocidade
+Crítico: 1 Nível = 0,5% + 100
+Chance Crítico: 1 Nível = 0,5%
