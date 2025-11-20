@@ -43,7 +43,34 @@
                 </div>
             </div>
         </div>
-        <div class="conteudoGame">
+        <div id="conteudoGameHome" class="conteudoGameHome" style="display: flex;">
+            <div class="containerConteudoHome">
+                <div class="topHome">
+                    <div class="containerTopHome">
+
+                    </div>
+                </div>
+                <div class="mainHome">
+                    <div class="containerMainHome">
+
+                    </div>
+                </div>
+                <div class="bottomHome">
+                    <div class="containerBottomHome">
+                        <div class="nada">
+                            <span class="nada"></span>
+                        </div>
+                        <div class="containerButtonBatalhar" onclick="batalharInimigoBasicoD()">
+                            <span class="buttonBatalhar">Batalhar</span>
+                        </div>
+                        <div class="nada">
+                            <span class="nada"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="conteudoGameStatus" class="conteudoGameStatus" style="display: none;">
             <div class="containerConteudoGame">
                 <div class="topStatus">
                     <div class="containerTopStatus">
@@ -212,12 +239,12 @@
                     <span class="textImg">Em Breve</span>
                     <span></span>
                 </div>
-                <div class="containerImg">
+                <div class="containerImg" onclick="irTelaStatus()">
                     <img src="./assets/status.png" alt="Botão para tela de Status">
                     <span class="textImg">Status</span>
                     <span></span>
                 </div>
-                <div class="containerImg">
+                <div class="containerImg" onclick="irTelaHome()">
                     <img src="./assets/home.png" alt="Botão para tela Home">
                     <span class="textImg">Home</span>
                     <span></span>

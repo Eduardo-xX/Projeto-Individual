@@ -1,1 +1,9 @@
-Fazer o gráfico atualizar sozinho após o upgrade.
+Atualizar o mínimo do gráfico assim que atualizar algo
+Fazer o Nível funcionar
+Tela da Dashboard
+Integrar o Jogo com o banco de dados
+Deixar a batalha do console na Tela
+
+Fazer a tela de Classes
+Fazer a tela dos Status Reais
+Fazer a tela de Perfil

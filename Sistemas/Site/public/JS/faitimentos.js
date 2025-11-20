@@ -1,8 +1,10 @@
+import { createFightInimigoBasicoD } from "./faitimentos/fight/criarFight.js";
 import { personagem } from "./personagem/personagem.js";
+import { verLimiteStatusRealPersonagem } from "./personagem/statusReal.js";
 import { calcularValorUpgradeChanceCritico, calcularValorUpgradeCritico, calcularValorUpgradeDano, calcularValorUpgradeDefesa, calcularValorUpgradeVelocidade, calcularValorUpgradeVida, upgradeChanceCritico, upgradeCritico, upgradeDano, upgradeDefesa, upgradeVelocidade, upgradeVida } from "./personagem/upgradePersonagem.js";
 
+const meuGrafico = criarGrafico()
 attStatusAtuais()
-attGrafico()
 
 
 
@@ -37,12 +39,12 @@ function attUpgradeStatus() {
 }
 
 // Atulizar Separadamente os Status
-function attStatusNivel() {
+export function attStatusNivel() {
     var tagNivel = document.getElementById('idNivelAtual')
     tagNivel.innerText = personagem.nivel
 }
 
-function attStatusXp() {
+export function attStatusXp() {
     var tagXp = document.getElementById('idXpAtual')
     tagXp.innerText = personagem.xp
 }
@@ -50,77 +52,108 @@ function attStatusXp() {
 function attStatusDano() {
     var tagDano = document.getElementById('idDanoAtual')
     tagDano.innerText = personagem.dano
+    attGrafico(meuGrafico)
 }
 
 function attStatusDefesa() {
     var tagDefesa = document.getElementById('idDefesaAtual')
     tagDefesa.innerText = personagem.defesa
+    attGrafico(meuGrafico)
 }
 
 function attStatusVida() {
     var tagVida = document.getElementById('idVidaAtual')
     tagVida.innerText = personagem.vida
+    attGrafico(meuGrafico)
 }
 
 function attStatusVelocidade() {
     var tagVelocidade = document.getElementById('idVelocidadeAtual')
     tagVelocidade.innerText = personagem.velocidade
+    attGrafico(meuGrafico)
 }
 
 function attStatusCritico() {
     var tagCritico = document.getElementById('idCriticoAtual')
     tagCritico.innerText = personagem.critico
+    attGrafico(meuGrafico)
 }
 
 function attStatusChanceCritico() {
     var tagChanceCritico = document.getElementById('idChanceCriticoAtual')
     tagChanceCritico.innerText = personagem.chanceCritico
+    attGrafico(meuGrafico)
 }
 
-function attStatusClasse() {
+export function attStatusClasse() {
     var tagClasse = document.getElementById('idClasseAtual')
     tagClasse.innerText = personagem.classe
 }
 // -------------------------
 
+// Upar Status
 window.uparAlgo = function(qual) {
     if (qual == 1) {
         upgradeDano()
         attStatusDano()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     } else if (qual == 2) {
         upgradeDefesa()
         attStatusDefesa()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     } else if (qual == 3) {
         upgradeVida()
         attStatusVida()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     } else if (qual == 4) {
         upgradeVelocidade()
         attStatusVelocidade()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     } else if (qual == 5) {
         upgradeCritico()
         attStatusCritico()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     } else if (qual == 6) {
         upgradeChanceCritico()
         attStatusChanceCritico()
         attUpgradeStatus()
         attStatusXp()
-        attGrafico()
     }
+}
+//  ------------------------
+
+// Área Menu
+window.irTelaStatus = function() {
+    var telaHome = document.getElementById('conteudoGameHome')
+    var telaStatus = document.getElementById('conteudoGameStatus')
+    
+    if(telaStatus.style.display == 'none') {
+        telaStatus.style.display = 'flex'
+        if (telaHome.style.display == 'flex') {
+            telaHome.style.display = 'none'
+        }
+    }
+}
+
+window.irTelaHome = function() {
+    var telaHome = document.getElementById('conteudoGameHome')
+    var telaStatus = document.getElementById('conteudoGameStatus')
+
+    if(telaHome.style.display == 'none') {
+        telaHome.style.display = 'flex'
+        if (telaStatus.style.display == 'flex') {
+            telaStatus.style.display = 'none'
+        }
+    }
+}
+
+window.batalharInimigoBasicoD = function() {
+    createFightInimigoBasicoD()
 }
 
 
@@ -147,9 +180,39 @@ window.uparAlgo = function(qual) {
 
 
 
+function attGrafico(grafico) {
+    var statusPersonagemAtual = [
+        personagem.defesa,
+        personagem.vida,
+        personagem.velocidade,
+        personagem.critico,
+        personagem.chanceCritico,
+        personagem.dano
+    ]
 
+    var limites = verLimiteStatusRealPersonagem()
+    var limiteStatusClasse = [
+        limites.defesa,
+        limites.vida,
+        limites.velocidade,
+        limites.critico,
+        limites.chanceCritico,
+        limites.dano,
+    ]
 
-function attGrafico() {
+    // console.log(grafico.data.datasets[0].data = [2, 2, 2, 2, 2, 2])
+    grafico.data.datasets[0].data = statusPersonagemAtual
+    grafico.update()
+    grafico.data.datasets[1].data = limiteStatusClasse
+    grafico.update()
+
+    grafico.options.scales.r.max = limites.dano
+    grafico.update()
+
+}
+
+function criarGrafico() {
+
     var statusPersonagemAtual = [
         personagem.defesa,
         personagem.vida,
@@ -170,7 +233,7 @@ function attGrafico() {
 
     const ctx = document.getElementById('myGrafico');
     
-    new Chart(ctx, {
+    var saveGrafico = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
@@ -192,7 +255,7 @@ function attGrafico() {
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgb(255, 99, 132)'
             }, {
-                label: 'Max Status Classe',
+                label: `Max Status ${personagem.classe}`,
                 data: limiteStatusClasse,
                 fill: true,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -205,10 +268,39 @@ function attGrafico() {
         },
         options: {
             elements: {
-            line: {
-                borderWidth: 3
-            }
+                line: {
+                    borderWidth: 3
+                }
+            },
+            scales: {
+                r: {
+                    pointLabels: {
+                        color: '#ffffff',
+                        font: {
+                            size: 15,
+                            // weight: 600,
+                            // family: 'Poppins'
+                        }
+                    },
+                    max: 5,
+                    min: 0,
+                    tickets: {
+                        stepSize: 1
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            size: 13
+                        }
+                    }
+                }
             }
         },
     });
+
+    return saveGrafico
 }

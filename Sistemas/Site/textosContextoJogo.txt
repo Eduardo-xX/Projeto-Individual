@@ -5,3 +5,5 @@ Vida: 1 Nível = 5 Vida
 Velocidade: 1 Nível = 1 Velocidade
 Crítico: 1 Nível = 0,5% + 100
 Chance Crítico: 1 Nível = 0,5%
+
+Caminho para o combate: FightInimigoBasico.js -> criarFight.js -> inimigoBasico.js -> statusReal.js -> personagem.js

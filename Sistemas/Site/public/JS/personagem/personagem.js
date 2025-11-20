@@ -1,5 +1,6 @@
 export var personagem = {
     tagJogador: 11,
+    nickname: 'Zduardo',
     nivel: 0,
     faixaNivel: 0,
     xp: 100,
