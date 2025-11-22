@@ -10,6 +10,7 @@ export function verStatusRealPersonagem() {
         critico: ((personagem.critico + 100) / 100),
         chanceCritico: (personagem.chanceCritico * 0.5)
     }
+    
     return statusRealPersonagem
 }
 

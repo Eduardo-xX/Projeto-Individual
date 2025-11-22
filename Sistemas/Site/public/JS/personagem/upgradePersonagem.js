@@ -154,6 +154,7 @@ export function upgradeDano() {
         if (personagem.xp >= calcularValorUpgradeDano()) {
             personagem.xp -= calcularValorUpgradeDano()
             personagem.dano += 1
+            personagem.totalUpgrades ++
         }
     }
 }
@@ -169,6 +170,7 @@ export function upgradeDefesa() {
         if (personagem.xp >= calcularValorUpgradeDefesa()) {
             personagem.xp -= calcularValorUpgradeDefesa()
             personagem.defesa += 1
+            personagem.totalUpgrades ++
         }
     }
 }
@@ -184,6 +186,7 @@ export function upgradeVida() {
         if (personagem.xp >= calcularValorUpgradeVida()) {
             personagem.xp -= calcularValorUpgradeVida()
             personagem.vida += 1
+            personagem.totalUpgrades ++
         }
     }
 }
@@ -199,6 +202,7 @@ export function upgradeVelocidade() {
         if (personagem.xp >= calcularValorUpgradeVelocidade()) {
             personagem.xp -= calcularValorUpgradeVelocidade()
             personagem.velocidade += 1
+            personagem.totalUpgrades ++
         }
     }
 }
@@ -214,6 +218,7 @@ export function upgradeCritico() {
         if (personagem.xp >= calcularValorUpgradeCritico()) {
             personagem.xp -= calcularValorUpgradeCritico()
             personagem.critico += 1
+            personagem.totalUpgrades ++
         }
     }
 }
@@ -229,6 +234,7 @@ export function upgradeChanceCritico() {
         if (personagem.xp >= calcularValorUpgradeChanceCritico()) {
             personagem.xp -= calcularValorUpgradeChanceCritico()
             personagem.chanceCritico += 1
+            personagem.totalUpgrades ++
         }
     }
 }

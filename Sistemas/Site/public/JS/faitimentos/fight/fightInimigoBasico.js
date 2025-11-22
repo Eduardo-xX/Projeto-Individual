@@ -113,6 +113,7 @@ export async function fightInimigoBasico(player, inimigo) {
         console.log(' ')
         console.log(' ')
         personagem.faixaNivel += inimigo.exp
+        personagem.totalXp += inimigo.xp
         personagem.xp += inimigo.xp
         attStatusXp()
     }

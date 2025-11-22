@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div id="conteudoGameHome" class="conteudoGameHome" style="display: flex;">
+        <div id="conteudoGameHome" class="conteudoGameHome" style="display: none;">
             <div class="containerConteudoHome">
                 <div class="topHome">
                     <div class="containerTopHome">
@@ -91,6 +91,8 @@
                         <div class="status">
                             <div class="containerStatus">
                                 <div class="containerMiniTitleStatus">
+                                    <span class="miniTitleStatus">LEVEL</span>
+                                    <span> - </span>
                                     <span class="miniTitleStatus">STATUS</span>
                                 </div>
                                 <div class="containerStatusAtuais">
@@ -129,7 +131,7 @@
                                 <div class="containerMyGrafico">
                                     <canvas id="myGrafico"></canvas>
                                 </div>
-                                <div class="containerDashboard">
+                                <div class="containerDashboard" onclick="irTelaDashboard()">
                                     <span class="dashboard">Dashboard</span>
                                 </div>
                             </div>
@@ -227,6 +229,142 @@
                         </div>
                         <div class="containerEndNada">
                             <span class="nada"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="conteudoGameDashboard" class="conteudoGameDashboard" style="display: flex;">
+            <div class="containerConteudoDashboard">
+                <div class="columnLeft columns">
+                    <div class="dashboardContainerClasse">
+                        <span id="textClasse">Classe</span>
+                    </div>
+                    <div class="dashboardContainerGrafico">
+                        <canvas id="dashboardMyGrafico"></canvas>
+                    </div>
+                    <div class="containerPorcentClasse">
+                        <span id="porcentClasse">44% da Classe</span>
+                    </div>
+                </div>
+                <div class="columnMid columns">
+                    <div class="dashboardTitleNickname">
+                        <span id="dashboardNickname">Zduardo</span>
+                    </div>
+                    <div class="dashboardBarStatus">
+                        <div class="barStatus barStatusForca">
+                            <span class="textBarStatus">Força</span>
+                            <div class="bar">
+                                <div class="fill" id="barForca"></div>
+                            </div>
+                            <span id="valorForca" title="Min/Max">0 / 0</span>
+                        </div>
+                        <div class="barStatus barStatusDefesa">
+                            <span class="textBarStatus">Defesa</span>
+                            <div class="bar">
+                                <div class="fill" id="barDefesa"></div>
+                            </div>
+                            <span id="valorDefesa" title="Min/Max">0 / 0</span>
+                        </div>
+                        <div class="barStatus barStatusVida">
+                            <span class="textBarStatus">Vida</span>
+                            <div class="bar">
+                                <div class="fill" id="barVida"></div>
+                            </div>
+                            <span id="valorVida" title="Min/Max">0 / 0</span>
+                        </div>
+                        <div class="barStatus barStatusVelocidade">
+                            <span class="textBarStatus">Velocidade</span>
+                            <div class="bar">
+                                <div class="fill" id="barVelocidade"></div>
+                            </div>
+                            <span id="valorVelocidade" title="Min/Max">0 / 0</span>
+                        </div>
+                        <div class="barStatus barStatusDanoC">
+                            <span class="textBarStatus">Dano Crítico</span>
+                            <div class="bar">
+                                <div class="fill" id="barDCritico"></div>
+                            </div>
+                            <span id="valorDCritico" title="Min/Max">0 / 0</span>
+                        </div>
+                        <div class="barStatus barStatusChance">
+                            <span class="textBarStatus">Chance Crítico</span>
+                            <div class="bar">
+                                <div class="fill" id="barCCritico"></div>
+                            </div>
+                            <span id="valorCCritico" title="Min/Max">0 / 0</span>
+                        </div>
+                    </div>
+                    <div class="dashboardFaixaXp">
+                        <span class="textBarStatus">EXP Nível</span>
+                            <div class="barXp">
+                                <div class="fillXp" id="barXp"></div>
+                            </div>
+                            <span id="valorXp">05 / 50</span>
+                    </div>
+                </div>
+                <div class="columnRight columns">
+                    <div class="dashboardProgresso">
+                        <div class="containerDashboardProgresso">
+                            <div class="miniTitleProgresso">
+                                <span>Progresso</span>
+                            </div>
+                            <div class="conteudoProgresso">
+                                <div class="containerNivelAtual containersProgresso">
+                                    <span class="textNivelAtual textProgresso">Nível atual:</span>
+                                    <span id="idProgressoNivelAtual">00</span>
+                                </div>
+                                <div class="containerUpgradesR containersProgresso">
+                                    <span class="textUpgradesR textProgresso">Upgrades realizados:</span>
+                                    <span id="idProgressoUpgradesR">00</span>
+                                </div>
+                                <div class="containerXpTotalO containersProgresso">
+                                    <span class="textXpTotalO textProgresso">XP total obtido:</span>
+                                    <span id="idXpTotalO">00</span>
+                                </div>
+                                <div class="containerDiasJogados containersProgresso">
+                                    <span class="textDiasJogados textProgresso">Tempo de Conta:</span>
+                                    <span id="idDiasJogados">00</span>
+                                    <span>dias</span>
+                                </div>
+                                <div class="containerTotalConquistas containersProgresso">
+                                    <span class="textTotalConquistas textProgresso">Total de conquistas:</span>
+                                    <span id="idTotalConquistas">Em Breve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboardStatusPvp">
+                        <div class="containerDashboardStatusPvp">
+                            <div class="miniTitleStatusPvp">
+                                <span>STATUS PVP</span>
+                            </div>
+                            <div class="conteudoStatusPvp">
+                                <div class="containerStatusPvpDano containersStatusPvp">
+                                    <span class="textDano textStatusPvp">Dano:</span>
+                                    <span id="idStatusPvpDano">00</span>
+                                </div>
+                                <div class="containerStatusPvpDefesa containersStatusPvp">
+                                    <span class="textDefesa textStatusPvp">Defesa:</span>
+                                    <span id="idStatusPvpDefesa">00</span>
+                                </div>
+                                <div class="containerStatusPvpVida containersStatusPvp">
+                                    <span class="textVida textStatusPvp">Vida:</span>
+                                    <span id="idStatusPvpVida">00</span>
+                                </div>
+                                <div class="containerStatusPvpVelocidade containersStatusPvp">
+                                    <span class="textVelocidade textStatusPvp">Velocidade:</span>
+                                    <span id="idStatusPvpVelocidade">00</span>
+                                </div>
+                                <div class="containerStatusPvpDanoCritico containersStatusPvp">
+                                    <span class="textDanoCritico textStatusPvp">Dano Crítico:</span>
+                                    <span id="idStatusPvpDanoCritico">00</span>
+                                </div>
+                                <div class="containerStatusPvpChanceCritico containersStatusPvp">
+                                    <span class="textChanceCritico textStatusPvp">Chance Crítico:</span>
+                                    <span id="idStatusPvpChanceCritico">00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

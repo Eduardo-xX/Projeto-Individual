@@ -7,6 +7,7 @@
     --cor-secundario_3: #FFAB69;
     --cor-secundario_4: #9C3848;
     --cor-game1: #14283F;
+    --cor-game2: #113949;
     --cor-white: #ffffff;
     --cor-black: #000000;
     --cor-cinza: #D9D9D9;
@@ -247,9 +248,10 @@ main .containerTopStatus .containerXpAtual {
     height: min-content;
     padding: .5rem 0;
     background-color: var(--cor-white);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    text-align: center;
     border-radius: 2rem;
     font-weight: bold;
 }
@@ -358,6 +360,17 @@ main .containerGrafico .containerDashboard {
     padding: .5rem 0;
     border-radius: 2rem;
     font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+
+main .containerGrafico .containerDashboard:hover {
+    transform: scale(1.05);
+    background-color: var(--cor-secundario_2);
+}
+
+main .containerGrafico .containerDashboard:active {
+    transform: scale(1.2);
 }
 
 /* Fim Gráfico */
@@ -480,6 +493,254 @@ main .containerBottomStatus .containerEndNada {
 /* Fim bottomStatus */
 
 /* Fim conteudoGameStatus */
+
+/* Começo conteudoGameDashboard */
+
+main .conteudoGameDashboard {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    background-color: var(--cor-game2)
+}
+
+main .conteudoGameDashboard .containerConteudoDashboard {
+    width: 100%;
+    height: 90%;
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+main .containerConteudoDashboard .columns {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Começo columnLeft */
+
+main .containerConteudoDashboard .columnLeft {
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+}
+
+main .containerConteudoDashboard .dashboardContainerClasse {
+    width: 100px;
+    background-color: var(--cor-white);
+    border-radius: 2rem;
+    padding: .5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* main .containerConteudoDashboard .dashboardContainerGrafico {
+
+} */
+
+main .containerConteudoDashboard .containerPorcentClasse {
+    width: 150px;
+    background-color: var(--cor-white);
+    border-radius: 2rem;
+    padding: .5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fim columnLeft */
+
+/* Começo columnMid */
+
+main .containerConteudoDashboard .columnMid {
+    width: 350px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .containerConteudoDashboard .dashboardTitleNickname {
+    font-family: var(--fontFamily-title_1);
+    font-size: 3rem;
+    color: var(--cor-white);
+}
+
+main .containerConteudoDashboard .dashboardBarStatus {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .dashboardBarStatus .barStatus {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    color: white;
+    font-size: 16px;
+}
+
+main .dashboardBarStatus .barStatus .textBarStatus {
+    width: 115px;
+}
+
+main .dashboardBarStatus .barStatus .bar {
+    width: 150px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+main .dashboardBarStatus .barStatus .bar .fill {
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff6384, #ff2e63);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+main .containerConteudoDashboard .dashboardFaixaXp {
+    /* width: 200px; */
+    background-color: var(--cor-white);
+    padding: .5rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* margin: 10px 0; */
+    /* color: white; */
+    font-size: 16px;
+}
+
+main .dashboardFaixaXp .barXp {
+    width: 150px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+main .dashboardFaixaXp .barXp .fillXp {
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(90deg, #63c1ff, #2ebdff);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* Fim columnMid */
+
+/* Começo columnRight */
+
+/* Começo progresso */
+
+main .containerConteudoDashboard .columnRight {
+    justify-content: space-around;
+}
+
+main .containerConteudoDashboard .dashboardProgresso {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-white);
+    /* background-color: var(--cor-game1);
+    color: var(--cor-white); */
+    border-radius: 2rem;
+    padding: .5rem;
+}
+
+main .dashboardProgresso .containerDashboardProgresso {
+    width: 95%;
+    height: 95%;
+}
+
+main .dashboardProgresso .miniTitleProgresso {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+main .dashboardProgresso .conteudoProgresso {
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+}
+
+main .dashboardProgresso .conteudoProgresso::-webkit-scrollbar {
+    display: none;
+}
+
+main .conteudoProgresso .containersProgresso {
+    margin-bottom: .5rem;
+}
+
+main .conteudoProgresso .textProgresso {
+    font-family: var(--fontFamily-title_1);
+}
+
+/* Fim progresso */
+
+/* Começo statusPvp */
+
+main .containerConteudoDashboard .dashboardStatusPvp {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2rem;
+    padding: .5rem;
+    border: 3px solid var(--cor-white);
+}
+
+main .dashboardStatusPvp .containerDashboardStatusPvp {
+    width: 95%;
+    height: 95%;
+}
+
+main .dashboardStatusPvp .miniTitleStatusPvp {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+main .dashboardStatusPvp .conteudoStatusPvp {
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+}
+
+main .dashboardStatusPvp .conteudoStatusPvp::-webkit-scrollbar {
+    display: none;
+}
+
+main .dashboardStatusPvp .textStatusPvp {
+    font-family: var(--fontFamily-title_1);
+}
+
+/* Fim statusPvp */
+
+/* Fim columnRight */
+
+/* Fim conteudoGameDashboard */
 
 /* Começo footerGame */
 
