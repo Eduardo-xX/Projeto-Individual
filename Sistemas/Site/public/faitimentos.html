@@ -23,7 +23,20 @@
             </div>
             <div class="menus">
                 <img src="./assets/Perfil.png" alt="Perfil">
-                <img src="./assets/Menu.png" alt="Menu">
+                <div class="menuOptions">
+                    <img class="options" src="./assets/Menu.png" alt="Menu" onclick="abrirMenuDropdown()">
+                    <div id="idMenuDropdown" class="menuDropdown" style="display: none;">
+                        <span>
+                            <a href="#" class="dropLinkPerfil">Perfil</a>
+                        </span>
+                        <span>
+                            <a href="#" class="dropLinkSalvar" onclick="salvarInfo()">Salvar</a>
+                        </span>
+                        <span>
+                            <a href="#" class="dropLinkSair" onclick="sairGame()">Sair</a>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -38,12 +51,12 @@
                     <span>Nível</span>
                     <span id="idNivelAtual">1</span>
                 </div>
-                <div class="classes">
+                <div class="classe" onclick="abrirMenuClasses()">
                     <img src="./assets/Zap.png" alt="Raio para entrar na Tela de Classes">
                 </div>
             </div>
         </div>
-        <div id="conteudoGameHome" class="conteudoGameHome" style="display: none;">
+        <div id="conteudoGameHome" class="conteudoGameHome" style="display: flex;">
             <div class="containerConteudoHome">
                 <div class="topHome">
                     <div class="containerTopHome">
@@ -52,7 +65,27 @@
                 </div>
                 <div class="mainHome">
                     <div class="containerMainHome">
-
+                        <div class="perso1">
+                            <img src="./assets/Holding_Object_Standing (32 x 32).png" alt="">
+                        </div>
+                        <div class="containerChatPvp">
+                            <div class="chatPvp">
+                                <div id="msgFightLuta">
+                                    <div class="firstAtaque ataques">
+                                        <span class="persoBold persoTop">Globin Rank D</span>
+                                        <span class="msgAtaque">Atacou e causou 8 de dano!</span>
+                                    </div>
+                                    <div> - - - - - </div>
+                                    <div class="secondAtaque ataques">
+                                        <span class="persoBold persoBot">Zduardo</span>
+                                        <span class="msgAtaque">Ficou com 7 de vida</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perso2">
+                            <img src="./assets/Victory_Pose (32 x 32).png" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="bottomHome">
@@ -234,7 +267,7 @@
                 </div>
             </div>
         </div>
-        <div id="conteudoGameDashboard" class="conteudoGameDashboard" style="display: flex;">
+        <div id="conteudoGameDashboard" class="conteudoGameDashboard" style="display: none;">
             <div class="containerConteudoDashboard">
                 <div class="columnLeft columns">
                     <div class="dashboardContainerClasse">
@@ -366,6 +399,37 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="conteudoClasse" class="conteudoClasse" style="display: none;">
+            <div class="containerConteudoClasse">
+                <div class="titleClasse">
+                    <span>Sistema de Classes</span>
+                </div>
+                <div class="classes">
+                    <div class="classeAtual">
+                        <span id="idAtualClasse">Classe Atual</span>
+                    </div>
+                    <div class="setaClasse">
+                        <img src="./assets/arrowLine-right-1000_white.png" alt="">
+                    </div>
+                    <div class="classeProxima">
+                        <span id="idClasseProxima">Próxima Classe</span>
+                    </div>
+                </div>
+                <div class="custos">
+                    <div class="custoXp">
+                        <span>Custo Xp</span>
+                        <span id="idCustoXp">300</span>
+                    </div>
+                    <div class="upar" onclick="uparClasse()">
+                        <span>Upar</span>
+                    </div>
+                    <div class="nivelMin">
+                        <span>Nível Minímo</span>
+                        <span id="idNivelMin">1</span>
                     </div>
                 </div>
             </div>

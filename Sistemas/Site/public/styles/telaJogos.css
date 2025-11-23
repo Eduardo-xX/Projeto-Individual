@@ -66,6 +66,49 @@ header .menus img {
     margin: .5rem;
 }
 
+header .menus .menuBurguer {
+    cursor: pointer;
+}
+
+header .menus .menuDropdown {
+    width: 150px;
+    position: absolute;
+    background-color: var(--cor-white);
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -20px;
+    z-index: 1;
+}
+
+header .menus .menuDropdown span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-principal_2);
+}
+
+header .menus .menuDropdown span a {
+    width: 100%;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: var(--cor-white);
+    transition: .5s;
+}
+
+header .menus .menuDropdown span a:hover {
+    background-color: var(--cor-secundario_2);
+    color: var(--cor-black);
+}
+
+header .menus .menuDropdown span .dropLinkSalvar:hover {
+    background-color: var(--cor-secundario_3);
+}
+
+header .menus .menuDropdown span .dropLinkSair:hover {
+    background-color: var(--cor-secundario_4);
+}
+
 /* Fim Header */
 
 /* Começo Main */
@@ -144,6 +187,7 @@ main .containerMain .buttonPlay:hover {
     background-color: var(--cor-white);
     color: var(--cor-black);
     font-weight: bold;
+    cursor: pointer;
 }
 
 main .containerMain .buttonIdeias {

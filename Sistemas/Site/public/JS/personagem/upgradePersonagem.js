@@ -1,5 +1,16 @@
-import { attStatusClasse, attStatusNivel } from "../faitimentos.js";
+import { attGraficos, attStatusAtuais, attStatusClasse, attStatusNivel } from "../faitimentos.js";
 import { personagem } from "./personagem.js";
+
+export function descobrirProximoRank(rank) {
+    var listaRanks = ['Rank D', 'Rank C', 'Rank B', 'Rank A', 'Rank S']
+
+    var indexLista = listaRanks.indexOf(rank)
+    var newValor = listaRanks[indexLista + 1]
+    if (newValor == listaRanks.length) {
+        newValor --
+    }
+    return newValor
+}
 
 export function calcularValorEvolucaoNivel() {
     if (personagem.classe == 'Rank D' && personagem.nivel == 0) {
@@ -30,106 +41,132 @@ export function calcularValorEvolucaoNivel() {
 }
 
 export function calcularValorUpgradeDano() {
-    if (personagem.classe == 'Rank D') {
-        return personagem.dano * 10
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.dano * 20
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.dano * 30
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.dano * 40
-    } else if (personagem.classe == 'Rank S') {
+    if (personagem.dano >= 80 && personagem.nivel >= 9) {
         return personagem.dano * 50
+    } else if (personagem.dano >= 50 && personagem.nivel >= 6) {
+        return personagem.dano * 40
+    } else if (personagem.dano >= 30 && personagem.nivel >= 3) {
+        return personagem.dano * 30
+    } else if (personagem.dano >= 5 && personagem.nivel >= 1) {
+        return personagem.dano * 20
+    } else if (personagem.dano >= 1 && personagem.nivel >= 0) {
+        return personagem.dano * 10
     }
+
 }
 
 export function calcularValorUpgradeDefesa() {
-    if (personagem.classe == 'Rank D') {
-        return personagem.defesa * 10
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.defesa * 20
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.defesa * 30
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.defesa * 40
-    } else if (personagem.classe == 'Rank S') {
+    if (personagem.defesa >= 80 && personagem.nivel >= 9) {
         return personagem.defesa * 50
+    } else if (personagem.defesa >= 50 && personagem.nivel >= 6) {
+        return personagem.defesa * 40
+    } else if (personagem.defesa >= 30 && personagem.nivel >= 3) {
+        return personagem.defesa * 30
+    } else if (personagem.defesa >= 5 && personagem.nivel >= 1) {
+        return personagem.defesa * 20
+    } else if (personagem.defesa >= 1 && personagem.nivel >= 0) {
+        return personagem.defesa * 10
     }
 }
 
 export function calcularValorUpgradeVida() {
-    if (personagem.classe == 'Rank D') {
-        return personagem.vida * 10
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.vida * 20
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.vida * 30
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.vida * 40
-    } else if (personagem.classe == 'Rank S') {
+    if (personagem.vida >= 80 && personagem.nivel >= 9) {
         return personagem.vida * 50
+    } else if (personagem.vida >= 50 && personagem.nivel >= 6) {
+        return personagem.vida * 40
+    } else if (personagem.vida >= 30 && personagem.nivel >= 3) {
+        return personagem.vida * 30
+    } else if (personagem.vida >= 5 && personagem.nivel >= 1) {
+        return personagem.vida * 20
+    } else if (personagem.vida >= 1 && personagem.nivel >= 0) {
+        return personagem.vida * 10
     }
 }
 
 export function calcularValorUpgradeVelocidade() {
-    if (personagem.classe == 'Rank D') {
+    if (personagem.velocidade >= 80 && personagem.nivel >= 9) {
         return personagem.velocidade * 50
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.velocidade * 100
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.velocidade * 150
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.velocidade * 200
-    } else if (personagem.classe == 'Rank S') {
-        return personagem.velocidade * 250
+    } else if (personagem.velocidade >= 50 && personagem.nivel >= 6) {
+        return personagem.velocidade * 40
+    } else if (personagem.velocidade >= 30 && personagem.nivel >= 3) {
+        return personagem.velocidade * 30
+    } else if (personagem.velocidade >= 5 && personagem.nivel >= 1) {
+        return personagem.velocidade * 20
+    } else if (personagem.velocidade >= 1 && personagem.nivel >= 0) {
+        return personagem.velocidade * 10
     }
 }
 
 export function calcularValorUpgradeCritico() {
-    if (personagem.classe == 'Rank D') {
-        return personagem.critico * 100
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.critico * 200
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.critico * 300
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.critico * 400
-    } else if (personagem.classe == 'Rank S') {
-        return personagem.critico * 500
+    if (personagem.critico >= 80 && personagem.nivel >= 9) {
+        return personagem.critico * 50
+    } else if (personagem.critico >= 50 && personagem.nivel >= 6) {
+        return personagem.critico * 40
+    } else if (personagem.critico >= 30 && personagem.nivel >= 3) {
+        return personagem.critico * 30
+    } else if (personagem.critico >= 5 && personagem.nivel >= 1) {
+        return personagem.critico * 20
+    } else if (personagem.critico >= 1 && personagem.nivel >= 0) {
+        return personagem.critico * 10
     }
 }
 
 export function calcularValorUpgradeChanceCritico() {
-    if (personagem.classe == 'Rank D') {
-        return personagem.chanceCritico * 300
-    } else if (personagem.classe == 'Rank C') {
-        return personagem.chanceCritico * 600
-    } else if (personagem.classe == 'Rank B') {
-        return personagem.chanceCritico * 900
-    } else if (personagem.classe == 'Rank A') {
-        return personagem.chanceCritico * 1200
-    } else if (personagem.classe == 'Rank S') {
-        return personagem.chanceCritico * 1500
+    if (personagem.chanceCritico >= 80 && personagem.nivel >= 9) {
+        return personagem.chanceCritico * 50
+    } else if (personagem.chanceCritico >= 50 && personagem.nivel >= 6) {
+        return personagem.chanceCritico * 40
+    } else if (personagem.chanceCritico >= 30 && personagem.nivel >= 3) {
+        return personagem.chanceCritico * 30
+    } else if (personagem.chanceCritico >= 5 && personagem.nivel >= 1) {
+        return personagem.chanceCritico * 20
+    } else if (personagem.chanceCritico >= 1 && personagem.nivel >= 0) {
+        return personagem.chanceCritico * 10
+    }
+}
+
+export function calcularValorUpgradeClasse(rank) {
+    if (rank == 'Rank D') {
+        return 100
+    } else if (rank == 'Rank C') {
+        return 1000
+    } else if (rank == 'Rank B') {
+        return 5000
+    } else if (rank == 'Rank A') {
+        return 25000
+    }
+}
+
+export function calcularNivelUpgradeClasse(rank) {
+    if (rank == 'Rank D') {
+        return 1
+    } else if (rank == 'Rank C') {
+        return 3
+    } else if (rank == 'Rank B') {
+        return 6
+    } else if (rank == 'Rank A') {
+        return 9
     }
 }
 
 export function evoluirClasse() {
-    if (personagem.nivel <= 0) {
-        personagem.classe = 'Rank D'
-        attStatusClasse()
-    } else if (personagem.nivel > 0 && personagem.nivel <= 3) {
+    if (personagem.classe == 'Rank D' && personagem.nivel >= calcularNivelUpgradeClasse('Rank D') && personagem.xp >= calcularValorUpgradeClasse('Rank D')) {
+        personagem.xp -= 100
         personagem.classe = 'Rank C'
-        attStatusClasse()
-    } else if (personagem.nivel > 3 && personagem.nivel <= 6) {
+    } else if (personagem.classe == 'Rank C' && personagem.nivel >= calcularNivelUpgradeClasse('Rank C') && personagem.xp >= calcularValorUpgradeClasse('Rank C')) {
+        personagem.xp -= 1000
         personagem.classe = 'Rank B'
-        attStatusClasse()
-    } else if (personagem.nivel > 6 && personagem.nivel <= 9) {
+    } else if (personagem.classe == 'Rank B' && personagem.nivel >= calcularNivelUpgradeClasse('Rank B') && personagem.xp >= calcularValorUpgradeClasse('Rank B')) {
+        personagem.xp -= 5000
         personagem.classe = 'Rank A'
-        attStatusClasse()
-    } else if (personagem.nivel > 9) {
+    } else if (personagem.classe == 'Rank A' && personagem.nivel >= calcularNivelUpgradeClasse('Rank A') && personagem.xp >= calcularValorUpgradeClasse('Rank A')) {
+        personagem.xp -= 25000
         personagem.classe = 'Rank S'
-        attStatusClasse()
     }
+
+    attStatusClasse()
+    attGraficos()
+    attStatusAtuais()
 }
 
 export function evoluirLevel() {
@@ -138,7 +175,6 @@ export function evoluirLevel() {
             personagem.faixaNivel -= calcularValorEvolucaoNivel()
             personagem.nivel ++
             attStatusNivel()
-            evoluirClasse()
         }
     }
 }

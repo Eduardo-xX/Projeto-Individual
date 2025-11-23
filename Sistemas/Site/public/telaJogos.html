@@ -23,7 +23,15 @@
             </div>
             <div class="menus">
                 <img src="./assets/Perfil.png" alt="Perfil">
-                <img src="./assets/Menu.png" alt="Menu">
+                <img class="menuBurguer" src="./assets/Menu.png" alt="Menu" onclick="abrirMenuDropdown()">
+                <div id="idMenuDropdown" class="menuDropdown" style="display: none;">
+                    <span>
+                        <a href="#" class="dropLinkPerfil">Perfil</a>
+                    </span>
+                    <span>
+                        <a href="#" class="dropLinkSair" onclick="sairTelaJogos()">Sair</a>
+                    </span>
+                </div>
             </div>
         </div>
     </header>
@@ -33,7 +41,8 @@
             <div class="cardJogo faitimentos">
                 <div class="containerCardJogo">
                     <h3 class="titleGame">Faitimentos</h3>
-                    <a class="buttonJogar buttonPlay" href="./faitimentos.html">Jogar</a>
+                    <!-- <a class="buttonJogar buttonPlay" href="./faitimentos.html">Jogar</a> -->
+                    <a class="buttonJogar buttonPlay" onclick="entrarFaitimentos()">Jogar</a>
                     <a class="buttonIdeias buttonSobre">Ver sobre</a>
                     <span class="textCurto">Aberto para Jogar</span>
                 </div>
@@ -96,5 +105,7 @@
             </div>
         </div>
     </main>
+
+    <script src="./JS/telaJogos.js"></script>
 </body>
 </html>

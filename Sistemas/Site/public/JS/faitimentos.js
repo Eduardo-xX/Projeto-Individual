@@ -1,7 +1,8 @@
 import { createFightInimigoBasicoD } from "./faitimentos/fight/criarFight.js";
 import { personagem } from "./personagem/personagem.js";
+import { salvarPersonagem } from "./personagem/salvarPerso.js";
 import { verLimiteStatusRealPersonagem, verStatusRealPersonagem } from "./personagem/statusReal.js";
-import { calcularValorEvolucaoNivel, calcularValorUpgradeChanceCritico, calcularValorUpgradeCritico, calcularValorUpgradeDano, calcularValorUpgradeDefesa, calcularValorUpgradeVelocidade, calcularValorUpgradeVida, upgradeChanceCritico, upgradeCritico, upgradeDano, upgradeDefesa, upgradeVelocidade, upgradeVida } from "./personagem/upgradePersonagem.js";
+import { calcularNivelUpgradeClasse, calcularValorEvolucaoNivel, calcularValorUpgradeChanceCritico, calcularValorUpgradeCritico, calcularValorUpgradeDano, calcularValorUpgradeDefesa, calcularValorUpgradeVelocidade, calcularValorUpgradeVida, descobrirProximoRank, evoluirClasse, evoluirLevel, upgradeChanceCritico, upgradeCritico, upgradeDano, upgradeDefesa, upgradeVelocidade, upgradeVida } from "./personagem/upgradePersonagem.js";
 
 const meuGrafico = criarGrafico()
 const meuGrafico1 = meuGrafico[0]
@@ -11,7 +12,7 @@ attStatusAtuais()
 
 
 // Atualizar os Status Iniciais do Personagem
-function attStatusAtuais() {
+export function attStatusAtuais() {
     attStatusNivel()
     attStatusXp()
     attStatusDano()
@@ -46,9 +47,26 @@ export function attStatusNivel() {
     tagNivel.innerText = personagem.nivel
 }
 
+window.addExpNivel = function(expNivel) {
+    var tagNivel = document.getElementById('idNivelAtual')
+    personagem.faixaNivel += expNivel
+    evoluirLevel()
+    tagNivel.innerText = personagem.nivel
+    document.getElementById('idProgressoNivelAtual').textContent = personagem.nivel
+}
+
 export function attStatusXp() {
     var tagXp = document.getElementById('idXpAtual')
     tagXp.innerText = personagem.xp
+    attBarraStatus(personagem.faixaNivel, calcularValorEvolucaoNivel(), 'barXp', 'valorXp')
+}
+
+window.addXp = function(xp) {
+    var tagXp = document.getElementById('idXpAtual')
+    personagem.xp += xp
+    personagem.totalXp += xp
+    tagXp.innerText = personagem.xp
+    document.getElementById('idXpTotalO').textContent = personagem.totalXp
     attBarraStatus(personagem.faixaNivel, calcularValorEvolucaoNivel(), 'barXp', 'valorXp')
 }
 
@@ -181,7 +199,19 @@ window.irTelaDashboard = function() {
     var telaDashboard = document.getElementById('conteudoGameDashboard')
 
     if(telaDashboard.style.display == 'none') {
-        document.getElementById('textClasse').textContent = personagem.classe
+        attDashboard()
+        telaDashboard.style.display = 'flex'
+        if (telaStatus.style.display == 'flex') {
+            telaStatus.style.display = 'none'
+        }
+        if (telaHome.style.display == 'flex') {
+            telaHome.style.display = 'none'
+        }
+    }
+}
+
+export function attDashboard() {
+    document.getElementById('textClasse').textContent = personagem.classe
         var meuMax = (
             personagem.dano +
             personagem.defesa +
@@ -198,9 +228,10 @@ window.irTelaDashboard = function() {
             verLimiteStatusRealPersonagem().critico +
             verLimiteStatusRealPersonagem().chanceCritico
         )
-        var porcentagemClasse = meuMax * 100 / totalMax 
-        document.getElementById('porcentClasse').textContent = `${porcentagemClasse.toFixed(1)}% da Classe`
+        var porcentagemClasse = (meuMax * 100 / totalMax).toFixed(1)
+        document.getElementById('porcentClasse').textContent = `${porcentagemClasse}% da Classe`
         document.getElementById('dashboardNickname').textContent = personagem.nickname
+        // Progresso
         document.getElementById('idProgressoNivelAtual').textContent = personagem.nivel
         document.getElementById('idProgressoUpgradesR').textContent = personagem.totalUpgrades
         document.getElementById('idXpTotalO').textContent = personagem.totalXp
@@ -222,15 +253,6 @@ window.irTelaDashboard = function() {
         document.getElementById('idStatusPvpVelocidade').textContent = verStatusRealPersonagem().velocidade
         document.getElementById('idStatusPvpDanoCritico').textContent = `${verStatusRealPersonagem().critico.toFixed(2)} %`
         document.getElementById('idStatusPvpChanceCritico').textContent = `${verStatusRealPersonagem().chanceCritico + '%'}`
-        
-        telaDashboard.style.display = 'flex'
-        if (telaStatus.style.display == 'flex') {
-            telaStatus.style.display = 'none'
-        }
-        if (telaHome.style.display == 'flex') {
-            telaHome.style.display = 'none'
-        }
-    }
 }
 
 window.batalharInimigoBasicoD = function() {
@@ -247,22 +269,66 @@ window.batalharInimigoBasicoD = function() {
 
 
 
+window.uparClasse = function() {
+    evoluirClasse()
+}
 
+function attSistemaClasse() {
+    var classeAtual = document.getElementById('idAtualClasse')
+    classeAtual.innerText = personagem.classe
+    var classeProxima = document.getElementById('idClasseProxima')
+    classeProxima.innerText = descobrirProximoRank(personagem.classe)
+    var custoXp = document.getElementById('idCustoXp')
+    custoXp.innerText = calcularValorEvolucaoNivel(personagem.classe)
+    var nivelMin = document.getElementById('idNivelMin')
+    nivelMin.innerText = calcularNivelUpgradeClasse(personagem.classe)
+}
 
+window.abrirMenuClasses = function() {
+    var menuUpClasse = document.getElementById('conteudoClasse')
+    if (menuUpClasse.style.display == 'none') {
+        menuUpClasse.style.display = 'flex'
+        attSistemaClasse()
+    } else {
+        menuUpClasse.style.display = 'none'
+    }
+}
 
+window.sairGame = function() {
+    var saveIdUsuario = sessionStorage.ID_USUARIO
+    var saveNickname = sessionStorage.NICKNAME_USUARIOFAITIMENTOS
 
+    sessionStorage.clear()
+    sessionStorage.ID_USUARIO = saveIdUsuario
+    sessionStorage.NICKNAME_USUARIO = saveNickname
 
+    setTimeout(() => {
+        window.location = 'telaJogos.html'
+    }, 1000);
+}
 
+window.salvarInfo = function() {
+    salvarPersonagem()
+}
 
-
-
-
-
+window.abrirMenuDropdown = function() {
+    var menuDropdown = document.getElementById('idMenuDropdown')
+    if (menuDropdown.style.display == 'none') {
+        menuDropdown.style.display = 'block'
+    } else {
+        menuDropdown.style.display = 'none'
+    }
+}
 
 function attBarraStatus(atual, max, idBarra, idTexto) {
     var pct = (atual / max) * 100
     document.getElementById(idBarra).style.width = pct + "%"
     document.getElementById(idTexto).innerText = `${atual} / ${max}`
+}
+
+export function attGraficos() {
+    attGrafico(meuGrafico1)
+    attGrafico(meuGrafico2)
 }
 
 function attGrafico(grafico) {
@@ -308,12 +374,12 @@ function criarGrafico() {
     ]
 
     var limiteStatusClasse = [
-        5,
-        5,
-        5,
-        5,
-        5,
-        5
+        verLimiteStatusRealPersonagem().defesa,
+        verLimiteStatusRealPersonagem().vida,
+        verLimiteStatusRealPersonagem().velocidade,
+        verLimiteStatusRealPersonagem().critico,
+        verLimiteStatusRealPersonagem().chanceCritico,
+        verLimiteStatusRealPersonagem().dano
     ]
 
     const ctx = document.getElementById('myGrafico');

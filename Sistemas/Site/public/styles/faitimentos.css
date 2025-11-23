@@ -8,6 +8,7 @@
     --cor-secundario_4: #9C3848;
     --cor-game1: #14283F;
     --cor-game2: #113949;
+    --cor-game3: #3a648ccc;
     --cor-white: #ffffff;
     --cor-black: #000000;
     --cor-cinza: #D9D9D9;
@@ -70,10 +71,54 @@ header .titleTelaJogos {
 
 header .menus {
     width: 150px;
+    display: flex;
 }
 
 header .menus img {
     margin: .5rem;
+}
+
+header .menus .options {
+    cursor: pointer;
+}
+
+header .menus .menuDropdown {
+    width: 150px;
+    position: absolute;
+    background-color: var(--cor-white);
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -80px;
+    z-index: 1;
+}
+
+header .menus .menuDropdown span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-principal_2);
+}
+
+header .menus .menuDropdown span a {
+    width: 100%;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: var(--cor-white);
+    transition: .5s;
+}
+
+header .menus .menuDropdown span a:hover {
+    background-color: var(--cor-secundario_2);
+    color: var(--cor-black);
+}
+
+header .menus .menuDropdown span .dropLinkSalvar:hover {
+    background-color: var(--cor-secundario_3);
+}
+
+header .menus .menuDropdown span .dropLinkSair:hover {
+    background-color: var(--cor-secundario_4);
 }
 
 /* Fim Header */
@@ -105,6 +150,11 @@ main .containerHeaderGame {
 main .containerHeaderGame .nivel {
     font-family: var(--fontFamily-title_1);
     font-size: 1.5rem;
+}
+
+main .containerHeaderGame .classe {
+    cursor: pointer;
+    z-index: 5;
 }
 
 /* Começo conteudoGameHome */
@@ -157,6 +207,98 @@ main .mainHome .containerMainHome {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp {
+    width: 100%;
+    height: 90%;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp {
+    width: 88%;
+    height: 88%;
+    padding: 1rem;
+    background-color: rgba(32, 42, 53, 0.9);
+    border-radius: 2rem;
+    overflow-y: auto;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp::-webkit-scrollbar {
+    display: none;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp div {
+    font-family: var(--fontFamily-regular_2);
+    color: var(--cor-white);
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+/* Começo DIV msg inicial Luta */
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgInicialLuta {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgInicialLuta span {
+    font-size: 1.5rem;
+}
+
+/* Começo DIV msg inicial Luta */
+
+/* Começo DIV msg Fight Luta */
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta span {
+    font-size: 1rem;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .ataques {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .ataques .msgAtaque {
+    font-size: 1.2rem;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .persoBold {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .persoTop {
+    color: var(--cor-secundario_2);
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .persoBot {
+    color: var(--cor-secundario_4);
+}
+
+/* Fim DIV msg Fight Luta */
+
+main .mainHome .containerMainHome img {
+    width: 300px;
 }
 
 /* Fim mainHome */
@@ -347,8 +489,6 @@ main .containerGrafico .containerMyGrafico {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: var(--cor-white);
-    border-radius: 50%; */
 }
 
 main .containerGrafico .containerDashboard {
@@ -537,9 +677,13 @@ main .containerConteudoDashboard .dashboardContainerClasse {
     font-weight: bold;
 }
 
-/* main .containerConteudoDashboard .dashboardContainerGrafico {
-
-} */
+main .containerConteudoDashboard .dashboardContainerGrafico {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 main .containerConteudoDashboard .containerPorcentClasse {
     width: 150px;
@@ -741,6 +885,100 @@ main .dashboardStatusPvp .textStatusPvp {
 /* Fim columnRight */
 
 /* Fim conteudoGameDashboard */
+
+/* Começo conteudoClasse */
+
+main .conteudoClasse {
+    position: absolute;
+    top: 150px;
+    width: 1200px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+main .conteudoClasse .containerConteudoClasse {
+    width: 600px;
+    height: 400px;
+    background-color: var(--cor-game3);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .containerConteudoClasse .titleClasse {
+    font-family: var(--fontFamily-title_1);
+    color: var(--cor-white);
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+main .containerConteudoClasse .classes {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--cor-black);
+    font-weight: bold;
+    margin-top: .5rem;
+}
+
+main .containerConteudoClasse .classes div {
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .containerConteudoClasse .classes img {
+    width: 100px;
+}
+
+main .containerConteudoClasse .custos {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    font-weight: bold;
+}
+
+main .containerConteudoClasse .custos div {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .containerConteudoClasse .custos .upar {
+    width: 150px;
+    background-color: var(--cor-secundario_1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    transition: .5s;
+    cursor: pointer;
+}
+
+main .containerConteudoClasse .custos .upar:hover {
+    background-color: var(--cor-secundario_2);
+    transform: scale(1.05);
+}
+
+main .containerConteudoClasse .custos .upar:active {
+    transform: scale(1.2);
+}
+
+
+/* Fim conteudoClasse */
 
 /* Começo footerGame */
 

@@ -1,3 +1,8 @@
+function resetSessao() {
+    sessionStorage.clear()
+}
+
+
 function dtNascimento() {
     var btnDtNasc = document.getElementById('input_dtNascUsuario')
 

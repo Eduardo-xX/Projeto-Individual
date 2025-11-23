@@ -1,5 +1,6 @@
-import { attStatusXp } from "../../faitimentos.js"
+import { attDashboard, attStatusXp } from "../../faitimentos.js"
 import { personagem } from "../../personagem/personagem.js"
+import { evoluirLevel } from "../../personagem/upgradePersonagem.js"
 
 export async function fightInimigoBasico(player, inimigo) {
     var playerFight = player
@@ -116,6 +117,8 @@ export async function fightInimigoBasico(player, inimigo) {
         personagem.totalXp += inimigo.xp
         personagem.xp += inimigo.xp
         attStatusXp()
+        evoluirLevel()
+        attDashboard()
     }
     console.log('Combate Finalizado...')
     console.log(' ')
@@ -146,7 +149,7 @@ function playerAtaca(playerFight2, inimigoFight2) {
         inimigoFight2.vida = 0
     }
     console.log(`${playerFight2.nickname} atacou e deu ${danoCausado} de dano no ${inimigoFight2.nickname}`)
-    console.log(`${inimigoFight2.nickname} tinha ${inimigoFight2.vida + danoCausado} e ficou com ${inimigoFight2.vida}`)
+    console.log(`${inimigoFight2.nickname} tinha ${inimigoFight2.vida + danoCausado} de vida e ficou com ${inimigoFight2.vida} de vida`)
     console.log(' ')
 }
 
@@ -174,7 +177,7 @@ function inimigoAtaca(playerFight2, inimigoFight2) {
         playerFight2.vida = 0
     }
     console.log(`${inimigoFight2.nickname} atacou e deu ${danoCausado} de dano no ${playerFight2.nickname}`)
-    console.log(`${playerFight2.nickname} tinha ${playerFight2.vida + danoCausado} e ficou com ${playerFight2.vida}`)
+    console.log(`${playerFight2.nickname} tinha ${playerFight2.vida + danoCausado} de vida e ficou com ${playerFight2.vida} de vida`)
     console.log(' ')
 }
 
@@ -183,3 +186,23 @@ function tempoEspera(tempo) {
     return new Promise(resolve => setTimeout(resolve, tempo));
     // ----------------
 }
+
+
+
+
+
+
+
+
+
+
+
+// Mensagem Inicial da Luta
+// <div id="msgInicialLuta">
+//     <div>
+//         <span>Começo da LUTA!!!</span>
+//     </div>
+//     <div>
+//         <span>Zduardo VS Globin Rank D</span>
+//     </div>
+// </div>

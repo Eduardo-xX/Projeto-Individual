@@ -1,3 +1,7 @@
+function resetSessao() {
+    sessionStorage.clear()
+}
+
 var textJogoClickerLizard = `
     Primeiro jogo que eu realmente tentei focar para desenvolver.
     <br>

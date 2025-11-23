@@ -1,3 +1,8 @@
+function resetSessao() {
+    sessionStorage.clear()
+}
+
+
 function entrar() {
     var emailVar = input_emailUsuario.value
     var senhaVar = input_senhaUsuario.value
