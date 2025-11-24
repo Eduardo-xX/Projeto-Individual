@@ -160,11 +160,33 @@ window.uparAlgo = function(qual) {
 }
 //  ------------------------
 
+// Área Perfil
+window.abreTelaPerfil = function() {
+    var telaHome = document.getElementById('conteudoGameHome')
+    var telaStatus = document.getElementById('conteudoGameStatus')
+    var telaDashboard = document.getElementById('conteudoGameDashboard')
+    var telaPerfil = document.getElementById('conteudoGamePerfil')
+
+    if(telaPerfil.style.display == 'none') {
+        telaPerfil.style.display = 'flex'
+        if (telaHome.style.display == 'flex') {
+            telaHome.style.display = 'none'
+        }
+        if (telaDashboard.style.display == 'flex') {
+            telaDashboard.style.display = 'none'
+        }
+        if (telaStatus.style.display == 'flex') {
+            telaStatus.style.display = 'none'
+        }
+    }
+}
+
 // Área Menu
 window.irTelaStatus = function() {
     var telaHome = document.getElementById('conteudoGameHome')
     var telaStatus = document.getElementById('conteudoGameStatus')
     var telaDashboard = document.getElementById('conteudoGameDashboard')
+    var telaPerfil = document.getElementById('conteudoGamePerfil')
     
     if(telaStatus.style.display == 'none') {
         telaStatus.style.display = 'flex'
@@ -174,6 +196,9 @@ window.irTelaStatus = function() {
         if (telaDashboard.style.display == 'flex') {
             telaDashboard.style.display = 'none'
         }
+        if (telaPerfil.style.display == 'flex') {
+            telaPerfil.style.display = 'none'
+        }
     }
 }
 
@@ -181,6 +206,7 @@ window.irTelaHome = function() {
     var telaHome = document.getElementById('conteudoGameHome')
     var telaStatus = document.getElementById('conteudoGameStatus')
     var telaDashboard = document.getElementById('conteudoGameDashboard')
+    var telaPerfil = document.getElementById('conteudoGamePerfil')
 
     if(telaHome.style.display == 'none') {
         telaHome.style.display = 'flex'
@@ -190,6 +216,9 @@ window.irTelaHome = function() {
         if (telaDashboard.style.display == 'flex') {
             telaDashboard.style.display = 'none'
         }
+        if (telaPerfil.style.display == 'flex') {
+            telaPerfil.style.display = 'none'
+        }
     }
 }
 
@@ -197,6 +226,7 @@ window.irTelaDashboard = function() {
     var telaHome = document.getElementById('conteudoGameHome')
     var telaStatus = document.getElementById('conteudoGameStatus')
     var telaDashboard = document.getElementById('conteudoGameDashboard')
+    var telaPerfil = document.getElementById('conteudoGamePerfil')
 
     if(telaDashboard.style.display == 'none') {
         attDashboard()
@@ -206,6 +236,9 @@ window.irTelaDashboard = function() {
         }
         if (telaHome.style.display == 'flex') {
             telaHome.style.display = 'none'
+        }
+        if (telaPerfil.style.display == 'flex') {
+            telaPerfil.style.display = 'none'
         }
     }
 }

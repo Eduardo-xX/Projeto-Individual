@@ -44,7 +44,7 @@
     <main>
         <div class="headerGame">
             <div class="containerHeaderGame">
-                <div class="iconPerfil">
+                <div class="iconPerfil" onclick="abreTelaPerfil()">
                     <img src="./assets/iconPerfil.png" alt="Perfil do Usuário no Jogo">
                 </div>
                 <div class="nivel">
@@ -65,26 +65,32 @@
                 </div>
                 <div class="mainHome">
                     <div class="containerMainHome">
-                        <div class="perso1">
-                            <img src="./assets/Holding_Object_Standing (32 x 32).png" alt="">
-                        </div>
-                        <div class="containerChatPvp">
-                            <div class="chatPvp">
-                                <div id="msgFightLuta">
-                                    <div class="firstAtaque ataques">
-                                        <span class="persoBold persoTop">Globin Rank D</span>
-                                        <span class="msgAtaque">Atacou e causou 8 de dano!</span>
+                        <div id="containerCombate" style="display: none;">
+                            <div class="perso1">
+                                <img id="imgPerso1Combate" src="./assets/Holding_Object_Standing (32 x 32).png" alt="Personagem 1 da Luta">
+                                <div class="barraVidaPersons">
+                                    <span class="textBarVidaPersons">Vida</span>
+                                    <div class="barraVidaFull">
+                                        <div class="fillVidaAtual" id="barVidaPerso1"></div>
                                     </div>
-                                    <div> - - - - - </div>
-                                    <div class="secondAtaque ataques">
-                                        <span class="persoBold persoBot">Zduardo</span>
-                                        <span class="msgAtaque">Ficou com 7 de vida</span>
-                                    </div>
+                                    <span id="valorVidaPerso1" title="Min/Max">0 / 0</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="perso2">
-                            <img src="./assets/Victory_Pose (32 x 32).png" alt="">
+                            <div class="containerChatPvp">
+                                <div id="idChatPvp" class="chatPvp">
+                                    
+                                </div>
+                            </div>
+                            <div class="perso2">
+                                <img id="imgPerso2Combate" src="./assets/Victory_Pose (32 x 32).png" alt="Personagem 2 da Luta">
+                                <div class="barraVidaPersons">
+                                    <span class="textBarVidaPersons">Vida</span>
+                                    <div class="barraVidaFull">
+                                        <div class="fillVidaAtual" id="barVidaPerso2"></div>
+                                    </div>
+                                    <span id="valorVidaPerso2" title="Min/Max">0 / 0</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,6 +402,119 @@
                                 <div class="containerStatusPvpChanceCritico containersStatusPvp">
                                     <span class="textChanceCritico textStatusPvp">Chance Crítico:</span>
                                     <span id="idStatusPvpChanceCritico">00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="conteudoGamePerfil" class="conteudoGamePerfil" style="display: none;">
+            <div class="containerConteudoGamePerfil">
+                <div class="personagem">
+                    <div class="containerTitleNickname">
+                        <span id="titleNickname">Nickname</span>
+                    </div>
+                    <div class="containerSkinPerfil">
+                        <img src="./assets/Holding_Object_Standing (32 x 32).png" alt="Skin atual" id="skinAtual">
+                    </div>
+                    <div class="containerNextsSkins">
+                        <img src="./assets/Victory_Pose (32 x 32).png" alt="Skin anterior" id="skinAnterior">
+                        <img src="./assets/Victory_Pose (32 x 32).png" alt="Próxima skin" id="skinProximo">
+                    </div>
+                </div>
+                <div class="conquistas">
+                    <div class="topConquistas">
+                        <div class="containerTopConquistas">
+                            <div class="containerTitleConquista">
+                                <span>Conquistas</span>
+                            </div>
+                            <div class="containerQuantidadeConquistas">
+                                <span>2/16</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mainConquistas">
+                        <div class="containerMainConquistas">
+                            <div class="fileirasConquistas">
+                                <div id="containerConquista_1" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 1">
+                                    <span>Martelo de Bronze</span>
+                                    <span>5 Conquistas</span>
+                                </div>
+                                <div id="containerConquista_2" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 2">
+                                    <span>Martelo de Prata</span>
+                                    <span>10 Conquistas</span>
+                                </div>
+                                <div id="containerConquista_3" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 3">
+                                    <span>Martelo de Ouro</span>
+                                    <span>15 Conquistas</span>
+                                </div>
+                                <div id="containerConquista_4" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 4">
+                                    <span>Martelo de Diamante</span>
+                                    <span>20 Conquistas</span>
+                                </div>
+                                <div id="containerConquista_5" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 5">
+                                    <span>Martelo de Ruby</span>
+                                    <span>25 Conquistas</span>
+                                </div>
+                            </div>
+                            <div class="fileirasConquistas">
+                                <div id="containerConquista_6" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 6">
+                                    <span>Estrela Simples</span>
+                                    <span>Nível 1</span>
+                                </div>
+                                <div id="containerConquista_7" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 7">
+                                    <span>Estrela Média</span>
+                                    <span>Nível 3</span>
+                                </div>
+                                <div id="containerConquista_8" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 8">
+                                    <span>Estrela Grande</span>
+                                    <span>Nível 5</span>
+                                </div>
+                                <div id="containerConquista_9" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 9">
+                                    <span>Estrela MegaGrande</span>
+                                    <span>Nível 8</span>
+                                </div>
+                                <div id="containerConquista_10" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 10">
+                                    <span>Estrela ExtraGrande</span>
+                                    <span>Nível 10</span>
+                                </div>
+                            </div>
+                            <div class="fileirasConquistas">
+                                <div id="containerConquista_11" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 11">
+                                    <span>Escudo de Madeiro</span>
+                                    <span>Rank D</span>
+                                </div>
+                                <div id="containerConquista_12" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 12">
+                                    <span>Escudo de Ferro</span>
+                                    <span>Rank C</span>
+                                </div>
+                                <div id="containerConquista_13" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 13">
+                                    <span>Escudo de Prata</span>
+                                    <span>Rank B</span>
+                                </div>
+                                <div id="containerConquista_14" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 14">
+                                    <span>Escudo de Ouro</span>
+                                    <span>Rank A</span>
+                                </div>
+                                <div id="containerConquista_15" class="containerConquista containerNconquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 15">
+                                    <span>Escudo de Diamante</span>
+                                    <span>Rank S</span>
                                 </div>
                             </div>
                         </div>

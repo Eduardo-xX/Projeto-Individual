@@ -9,6 +9,7 @@
     --cor-game1: #14283F;
     --cor-game2: #113949;
     --cor-game3: #3a648ccc;
+    --cor-game4: #007784;
     --cor-white: #ffffff;
     --cor-black: #000000;
     --cor-cinza: #D9D9D9;
@@ -209,6 +210,12 @@ main .mainHome .containerMainHome {
     align-items: center;
 }
 
+main .mainHome .containerMainHome #containerCombate {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
 main .mainHome .containerMainHome .containerChatPvp {
     width: 100%;
     height: 90%;
@@ -237,6 +244,11 @@ main .mainHome .containerMainHome .containerChatPvp .chatPvp div {
     color: var(--cor-white);
     font-size: .8rem;
     margin-bottom: .5rem;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp .elementoDom {
+    width: 100%;
+    height: 100%;
 }
 
 /* Começo DIV msg inicial Luta */
@@ -296,6 +308,80 @@ main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFightLuta .pers
 }
 
 /* Fim DIV msg Fight Luta */
+
+/* Começo DIV msg Final Luta */
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .loser,
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .winner,
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .empate {
+    font-size: 1.5rem;
+    color: var(--cor-secundario_4);
+    font-family: var(--fontFamily-title_1);
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .recompensaCombate {
+    font-size: 1rem;
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .winner {
+    color: var(--cor-secundario_2);
+}
+
+main .mainHome .containerMainHome .containerChatPvp .chatPvp #msgFinalLuta .empate {
+    color: var(--cor-secundario_3);
+}
+
+/* Fim DIV msg Final Luta */
+
+main #containerCombate .perso1,
+main #containerCombate .perso2 {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main #containerCombate .barraVidaPersons {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-game3);
+    border-radius: 2rem;
+}
+
+main #containerCombate .barraVidaPersons .textBarVidaPersons {
+    width: 50px;
+    display: flex;
+}
+
+main #containerCombate .barraVidaPersons .barraVidaFull {
+    width: 150px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+main #containerCombate .barraVidaPersons .barraVidaFull .fillVidaAtual {
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(90deg, #63ff78, #3fff2e);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
 
 main .mainHome .containerMainHome img {
     width: 300px;
@@ -979,6 +1065,151 @@ main .containerConteudoClasse .custos .upar:active {
 
 
 /* Fim conteudoClasse */
+
+/* Começo conteudoPerfil */
+
+main .conteudoGamePerfil {
+    width: 1200px;
+    height: 600px;
+    background-color: var(--cor-game4);
+}
+
+main .conteudoGamePerfil .containerConteudoGamePerfil {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* Começo personagem */
+
+main .conteudoGamePerfil .containerConteudoGamePerfil .personagem {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgb(255, 255, 255, 0.4);
+}
+
+main .containerConteudoGamePerfil .personagem .containerTitleNickname {
+    font-family: var(--fontFamily-title_1);
+    width: 90%;
+    font-size: 2.5rem;
+    color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+
+main .containerConteudoGamePerfil .personagem .containerSkinPerfil {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+main .containerConteudoGamePerfil .personagem .containerSkinPerfil #skinAtual {
+    width: 300px;
+}
+
+main .containerConteudoGamePerfil .personagem .containerNextsSkins {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .containerConteudoGamePerfil .personagem .containerNextsSkins #skinAnterior,
+main .containerConteudoGamePerfil .personagem .containerNextsSkins #skinProximo {
+    width: 100px;
+}
+
+/* Fim personagem */
+
+/* Começo conquistas */
+
+main .containerConteudoGamePerfil .conquistas {
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .containerConteudoGamePerfil .conquistas .topConquistas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.4);
+}
+
+main .containerConteudoGamePerfil .conquistas .topConquistas .containerTopConquistas {
+    font-family: var(--fontFamily-regular_2);
+    width: 90%;
+    height: 120px;
+    color: var(--cor-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+main .containerConteudoGamePerfil .conquistas .mainConquistas {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+}
+
+main .containerConteudoGamePerfil .conquistas .containerMainConquistas {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+main .containerConteudoGamePerfil .conquistas .containerMainConquistas::-webkit-scrollbar {
+    display: none;
+}
+
+main .containerConteudoGamePerfil .conquistas .containerMainConquistas .fileirasConquistas {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerConquista {
+    font-family: var(--fontFamily-regular_2);
+    height: 170px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-white);
+    margin: 0.5;
+}
+
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerNconquistada {
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerNconquistada span {
+    width: 97%;
+}
+
+/* Fim conquistas */
+
+main .conteudoGamePerfil .containerConteudoGamePerfil .conquistas .mainConquistas img {
+    width: 100px;
+}
+
+/* Fim conteudoPerfil */
 
 /* Começo footerGame */
 
