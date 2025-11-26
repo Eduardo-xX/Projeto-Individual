@@ -1,3 +1,4 @@
+import { verificarConquistasRanks, verificarTodasConquistas } from "./faitimentos/conquistas/verifyConquista.js";
 import { createFightInimigoBasicoD } from "./faitimentos/fight/criarFight.js";
 import { personagem } from "./personagem/personagem.js";
 import { salvarPersonagem } from "./personagem/salvarPerso.js";
@@ -8,7 +9,7 @@ const meuGrafico = criarGrafico()
 const meuGrafico1 = meuGrafico[0]
 const meuGrafico2 = meuGrafico[1]
 attStatusAtuais()
-
+verificarConquistasRanks()
 
 
 // Atualizar os Status Iniciais do Personagem
@@ -167,6 +168,10 @@ window.abreTelaPerfil = function() {
     var telaDashboard = document.getElementById('conteudoGameDashboard')
     var telaPerfil = document.getElementById('conteudoGamePerfil')
 
+    verificarTodasConquistas()
+
+    document.getElementById('titleNickname').textContent = personagem.nickname
+
     if(telaPerfil.style.display == 'none') {
         telaPerfil.style.display = 'flex'
         if (telaHome.style.display == 'flex') {
@@ -277,6 +282,7 @@ export function attDashboard() {
         var diferenca = dia.getTime() - diasJogado.getTime()
         var diferencaDias = Math.floor(diferenca / (1000 * 60 * 60 * 24))
         document.getElementById('idDiasJogados').textContent = diferencaDias
+        verificarTodasConquistas()
         // ------------------------------------------------------------------
 
         // Alterar o STATUS PVP

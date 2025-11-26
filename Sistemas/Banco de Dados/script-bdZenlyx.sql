@@ -44,6 +44,24 @@ PRIMARY KEY (fkUsuario, idContaFaitimentos),
 CONSTRAINT fkUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
 
+CREATE TABLE conquista (
+idConquista INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45),
+descricao VARCHAR(45)
+);
+
+CREATE TABLE conquistadas (
+idConquistadas INT,
+fkContaFaitimentos INT,
+fkUsuario INT,
+fkConquista INT,
+dtRegistro DATETIME DEFAULT CURRENT_TIMESTAMP,
+CONSTRAINT fkCTConquistadas FOREIGN KEY (fkContaFaitimentos) REFERENCES contaFaitimentos(idContaFaitimentos),
+CONSTRAINT fkUConquistadas FOREIGN KEY (fkUsuario) REFERENCES contaFaitimentos(fkUsuario),
+CONSTRAINT fkCConquistadas FOREIGN KEY (fkConquista) REFERENCES conquista(idConquista),
+PRIMARY KEY (idConquistadas, fkContaFaitimentos, fkUsuario, fkConquista)
+);
+
 SELECT * FROM usuario;
 SELECT * FROM mensagem;
 SELECT * FROM contaFaitimentos;
@@ -77,3 +95,27 @@ UPDATE contaFaitimentos SET
     chanceCritico = 2,
     classe = 'Rank D'
     WHERE idContaFaitimentos = 1 AND fkUsuario = 1;
+    
+INSERT INTO conquista (nome, descricao) VALUES
+	('Escudo de Madeira', 'Rank D'),
+	('Escudo de Ferro', 'Rank C'),
+	('Escudo de Prata', 'Rank B'),
+	('Escudo de Ouro', 'Rank A'),
+	('Escudo de Diamante', 'Rank S'),
+	('Medalha Fraca', '15 Upgrades'),
+	('Medalha Média', '30 Upgrades'),
+	('Medalha Grande', '70 Upgrades'),
+	('Medalha Giga', '100 Upgrades'),
+	('Medalha Extra', '150 Upgrades'),
+	('Estrela Simples', 'Nível 1'),
+	('Estrela Média', 'Nível 3'),
+	('Estrela Grande', 'Nível 5'),
+	('Estrela MegaGrande', 'Nível 8'),
+	('Estrela ExtraGrande', 'Nível 10'),
+	('Martelo de Bronze', '5 Conquistas'),
+	('Martelo de Prata', '10 Conquistas'),
+	('Martelo de Ouro', '15 Conquistas'),
+	('Martelo de Diamante', '20 Conquistas'),
+	('Martelo de Ruby', '25 Conquistas');
+    
+SELECT * FROM conquista;

@@ -129,7 +129,58 @@ header .menus .menuDropdown span .dropLinkSair:hover {
 main {
     margin-top: 80px;
     width: 1200px;
+    position: relative;
 }
+
+main .miniTelaConquista {
+    position: absolute;
+    right: 0;
+    margin: 1rem;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+main .miniTelaConquista .containerMiniTelaConquista {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+main .containerMiniTelaConquista .miniTitleConquista {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+main .containerMiniTelaConquista .miniSubtileConquista {
+    font-family: var(--fontFamily-title_1);
+    font-size: 1rem;
+}
+
+main .containerMiniTelaConquista .textConquista {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+main .containerMiniTelaConquista .recompensas {
+    font-family: var(--fontFamily-title_1);
+    margin-top: 2rem;
+}
+
+main .containerMiniTelaConquista #textRecompensa {
+    color: var(--cor-game1);
+}
+
+/* main .containerMiniTelaConquista . */
 
 main .headerGame {
     width: 100%;
@@ -1193,10 +1244,19 @@ main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .
     align-items: center;
     color: var(--cor-white);
     margin: 0.5;
+    transition: .5s;
 }
 
-main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerNconquistada {
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerConquista:hover {
+    transform: scale(1.1);
+}
+
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerNConquistada {
     background-color: rgb(0, 0, 0, 0.2);
+}
+
+main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerConquistada {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 main .containerConteudoGamePerfil .containerMainConquistas .fileirasConquistas .containerNconquistada span {

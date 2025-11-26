@@ -12,6 +12,7 @@ var saveVelocidade = sessionStorage.VELOCIDADE_USUARIOFAITIMENTOS
 var saveCritico = sessionStorage.CRITICO_USUARIOFAITIMENTOS
 var saveChanceCritico = sessionStorage.CHANCECRITICO_USUARIOFAITIMENTOS
 var saveClasse = sessionStorage.CLASSE_USUARIOFAITIMENTOS
+var saveConquistasFeitas = []
 var saveDtCadastro = sessionStorage.DTCADASTRO_USUARIOFAITIMENTOS
 
 export var personagem = {
@@ -29,5 +30,6 @@ export var personagem = {
     critico: parseInt(saveCritico),
     chanceCritico: parseInt(saveChanceCritico),
     classe: saveClasse,
+    conquistasFeitas: saveConquistasFeitas,
     dtCadastro: saveDtCadastro
 }

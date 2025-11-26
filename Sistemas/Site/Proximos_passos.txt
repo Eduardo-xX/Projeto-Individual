@@ -1,4 +1,1 @@
-Deixar a batalha do console na Tela
-
-Fazer a tela de Classes
 Fazer a tela de Perfil

@@ -56,6 +56,9 @@
                 </div>
             </div>
         </div>
+        <div id="miniTelaConquista" class="miniTelaConquista" style="display: none;">
+            
+        </div>
         <div id="conteudoGameHome" class="conteudoGameHome" style="display: flex;">
             <div class="containerConteudoHome">
                 <div class="topHome">
@@ -430,91 +433,118 @@
                                 <span>Conquistas</span>
                             </div>
                             <div class="containerQuantidadeConquistas">
-                                <span>2/16</span>
+                                <span id="quantidadeConquistas">2/16</span>
                             </div>
                         </div>
                     </div>
                     <div class="mainConquistas">
                         <div class="containerMainConquistas">
                             <div class="fileirasConquistas">
-                                <div id="containerConquista_1" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 1">
-                                    <span>Martelo de Bronze</span>
-                                    <span>5 Conquistas</span>
+                                <div id="containerConquista_1" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 1">
+                                    <span>Escudo de Madeira</span>
+                                    <span>Rank D</span>
                                 </div>
-                                <div id="containerConquista_2" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 2">
-                                    <span>Martelo de Prata</span>
-                                    <span>10 Conquistas</span>
+                                <div id="containerConquista_2" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 2">
+                                    <span>Escudo de Ferro</span>
+                                    <span>Rank C</span>
                                 </div>
-                                <div id="containerConquista_3" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 3">
-                                    <span>Martelo de Ouro</span>
-                                    <span>15 Conquistas</span>
+                                <div id="containerConquista_3" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 3">
+                                    <span>Escudo de Prata</span>
+                                    <span>Rank B</span>
                                 </div>
-                                <div id="containerConquista_4" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 4">
-                                    <span>Martelo de Diamante</span>
-                                    <span>20 Conquistas</span>
+                                <div id="containerConquista_4" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 4">
+                                    <span>Escudo de Ouro</span>
+                                    <span>Rank A</span>
                                 </div>
-                                <div id="containerConquista_5" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 5">
-                                    <span>Martelo de Ruby</span>
-                                    <span>25 Conquistas</span>
+                                <div id="containerConquista_5" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 5">
+                                    <span>Escudo de Diamante</span>
+                                    <span>Rank S</span>
                                 </div>
                             </div>
                             <div class="fileirasConquistas">
-                                <div id="containerConquista_6" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 6">
+                                <div id="containerConquista_6" class="containerConquista containerNConquistada">
+                                    <img src="./assets/workspace-premium.png" alt="Imagem da Conquista 6">
+                                    <span>Medalha Fraca</span>
+                                    <span>15 Upgrades</span>
+                                </div>
+                                <div id="containerConquista_7" class="containerConquista containerNConquistada">
+                                    <img src="./assets/workspace-premium.png" alt="Imagem da Conquista 7">
+                                    <span>Medalha Média</span>
+                                    <span>30 Upgrades</span>
+                                </div>
+                                <div id="containerConquista_8" class="containerConquista containerNConquistada">
+                                    <img src="./assets/workspace-premium.png" alt="Imagem da Conquista 8">
+                                    <span>Medalha Grande</span>
+                                    <span>70 Upgrades</span>
+                                </div>
+                                <div id="containerConquista_9" class="containerConquista containerNConquistada">
+                                    <img src="./assets/workspace-premium.png" alt="Imagem da Conquista 9">
+                                    <span>Medalha Giga</span>
+                                    <span>100 Upgrades</span>
+                                </div>
+                                <div id="containerConquista_10" class="containerConquista containerNConquistada">
+                                    <img src="./assets/workspace-premium.png" alt="Imagem da Conquista 10">
+                                    <span>Medalha Extra</span>
+                                    <span>150 Upgrades</span>
+                                </div>
+                            </div>
+                            <div class="fileirasConquistas">
+                                <div id="containerConquista_11" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 11">
                                     <span>Estrela Simples</span>
                                     <span>Nível 1</span>
                                 </div>
-                                <div id="containerConquista_7" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 7">
+                                <div id="containerConquista_12" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 12">
                                     <span>Estrela Média</span>
                                     <span>Nível 3</span>
                                 </div>
-                                <div id="containerConquista_8" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 8">
+                                <div id="containerConquista_13" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 13">
                                     <span>Estrela Grande</span>
                                     <span>Nível 5</span>
                                 </div>
-                                <div id="containerConquista_9" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 9">
+                                <div id="containerConquista_14" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 14">
                                     <span>Estrela MegaGrande</span>
                                     <span>Nível 8</span>
                                 </div>
-                                <div id="containerConquista_10" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 10">
+                                <div id="containerConquista_15" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista_star.png" alt="Imagem da Conquista 15">
                                     <span>Estrela ExtraGrande</span>
                                     <span>Nível 10</span>
                                 </div>
                             </div>
                             <div class="fileirasConquistas">
-                                <div id="containerConquista_11" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 11">
-                                    <span>Escudo de Madeiro</span>
-                                    <span>Rank D</span>
+                                <div id="containerConquista_16" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 16">
+                                    <span>Martelo de Bronze</span>
+                                    <span>5 Conquistas</span>
                                 </div>
-                                <div id="containerConquista_12" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 12">
-                                    <span>Escudo de Ferro</span>
-                                    <span>Rank C</span>
+                                <div id="containerConquista_17" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 17">
+                                    <span>Martelo de Prata</span>
+                                    <span>10 Conquistas</span>
                                 </div>
-                                <div id="containerConquista_13" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 13">
-                                    <span>Escudo de Prata</span>
-                                    <span>Rank B</span>
+                                <div id="containerConquista_18" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 18">
+                                    <span>Martelo de Ouro</span>
+                                    <span>15 Conquistas</span>
                                 </div>
-                                <div id="containerConquista_14" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 14">
-                                    <span>Escudo de Ouro</span>
-                                    <span>Rank A</span>
+                                <div id="containerConquista_19" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 19">
+                                    <span>Martelo de Diamante</span>
+                                    <span>20 Conquistas</span>
                                 </div>
-                                <div id="containerConquista_15" class="containerConquista containerNconquistada">
-                                    <img src="./assets/conquista_shield.png" alt="Imagem da Conquista 15">
-                                    <span>Escudo de Diamante</span>
-                                    <span>Rank S</span>
+                                <div id="containerConquista_20" class="containerConquista containerNConquistada">
+                                    <img src="./assets/conquista-Hammer_1.png" alt="Imagem da Conquista 20">
+                                    <span>Martelo de Ruby</span>
+                                    <span>25 Conquistas</span>
                                 </div>
                             </div>
                         </div>

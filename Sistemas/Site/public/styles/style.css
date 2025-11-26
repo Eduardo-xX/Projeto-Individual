@@ -122,6 +122,7 @@ main {
     display: flex;
     margin-top: 80px;
     background-color: var(--cor-black);
+    position: relative;
 }
 
 main .containerMain {

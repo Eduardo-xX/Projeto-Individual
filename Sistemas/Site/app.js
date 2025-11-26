@@ -15,12 +15,12 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-var indexRouter = require("./src/routes/index");
+// var indexRouter = require("./src/routes/index");
 // var uusuarioRouter = require("./src/routes/uusuarios");
-var avisosRouter = require("./src/routes/avisos");
-var medidasRouter = require("./src/routes/medidas");
-var aquariosRouter = require("./src/routes/aquarios");
-var empresasRouter = require("./src/routes/empresas");
+// var avisosRouter = require("./src/routes/avisos");
+// var medidasRouter = require("./src/routes/medidas");
+// var aquariosRouter = require("./src/routes/aquarios");
+// var empresasRouter = require("./src/routes/empresas");
 var mensagensRouter = require('./src/routes/mensagens');
 var usuariosRouter = require('./src/routes/usuarios')
 var faitimentosRouter = require('./src/routes/faitimentos')
@@ -31,12 +31,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 // app.use("/uusuarios", uusuarioRouter);
-app.use("/avisos", avisosRouter);
-app.use("/medidas", medidasRouter);
-app.use("/aquarios", aquariosRouter);
-app.use("/empresas", empresasRouter);
+// app.use("/avisos", avisosRouter);
+// app.use("/medidas", medidasRouter);
+// app.use("/aquarios", aquariosRouter);
+// app.use("/empresas", empresasRouter);
 app.use("/mensagens", mensagensRouter);
 app.use('/usuarios', usuariosRouter)
 app.use('/faitimentos', faitimentosRouter)
