@@ -1,4 +1,4 @@
-import { verificarConquistasRanks, verificarTodasConquistas } from "./faitimentos/conquistas/verifyConquista.js";
+import { verificarConquistasRanks, verificarTodasConquistas, verifyTodasConquistas } from "./faitimentos/conquistas/verifyConquista.js";
 import { createFightInimigoBasicoD } from "./faitimentos/fight/criarFight.js";
 import { personagem } from "./personagem/personagem.js";
 import { salvarPersonagem } from "./personagem/salvarPerso.js";
@@ -46,6 +46,7 @@ function attUpgradeStatus() {
 export function attStatusNivel() {
     var tagNivel = document.getElementById('idNivelAtual')
     tagNivel.innerText = personagem.nivel
+    verifyTodasConquistas()
 }
 
 window.addExpNivel = function(expNivel) {
@@ -54,6 +55,7 @@ window.addExpNivel = function(expNivel) {
     evoluirLevel()
     tagNivel.innerText = personagem.nivel
     document.getElementById('idProgressoNivelAtual').textContent = personagem.nivel
+    attBarraStatus(personagem.faixaNivel, calcularValorEvolucaoNivel(), 'barXp', 'valorXp')
 }
 
 export function attStatusXp() {
@@ -158,6 +160,7 @@ window.uparAlgo = function(qual) {
         attUpgradeStatus()
         attStatusXp()
     }
+    verifyTodasConquistas()
 }
 //  ------------------------
 
@@ -184,6 +187,7 @@ window.abreTelaPerfil = function() {
             telaStatus.style.display = 'none'
         }
     }
+    verifyTodasConquistas()
 }
 
 // Área Menu

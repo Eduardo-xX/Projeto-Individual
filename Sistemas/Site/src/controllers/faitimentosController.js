@@ -82,6 +82,7 @@ function salvar(req, res) {
     var velocidade = req.body.velocidadeServer
     var critico = req.body.criticoServer
     var chanceCritico = req.body.chanceCriticoServer
+    var conquistasFeitas = req.body.conquistasFeitasServer
     var classe = req.body.classeServer
 
     console.log(idUsuarioGame + ' ' +
@@ -125,6 +126,8 @@ function salvar(req, res) {
         res.status(400).send('Seu critico está undefined')
     } else if (chanceCritico == undefined) {
         res.status(400).send('Sua chanceCritico está undefined')
+    } else if (conquistasFeitas == undefined) {
+        res.status(400).send('Sua consquistasFeitas está undefined')
     } else if (classe == undefined) {
         res.status(400).send('Sua classe está undefined')
     } else {
@@ -132,6 +135,8 @@ function salvar(req, res) {
         .then(
             function (resultado) {
                 res.json(resultado)
+                faitimentosModel.salvarConquistadas(idUsuarioGame, idUsuario, conquistasFeitas)
+                console.log('feito')
             }
         ).catch (
             function (erro) {

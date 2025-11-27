@@ -14,6 +14,7 @@ export function salvarPersonagem() {
     var velocidadeVar = personagem.velocidade
     var criticoVar = personagem.critico
     var chanceCriticoVar = personagem.chanceCritico
+    var conquistasFeitasVar = personagem.conquistasFeitas
     var classeVar = personagem.classe
 
     if (
@@ -25,6 +26,7 @@ export function salvarPersonagem() {
         velocidadeVar == '' ||
         criticoVar == '' ||
         chanceCriticoVar == '' ||
+        conquistasFeitasVar == '' ||
         classeVar == ''
     ) {
         alert('Informações não encontradas.')
@@ -61,6 +63,7 @@ export function salvarPersonagem() {
             velocidadeServer: velocidadeVar,
             criticoServer: criticoVar,
             chanceCriticoServer: chanceCriticoVar,
+            conquistasFeitasServer: conquistasFeitasVar,
             classeServer: classeVar
         })
     })

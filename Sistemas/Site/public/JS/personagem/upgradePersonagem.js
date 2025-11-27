@@ -1,4 +1,5 @@
 import { attGraficos, attStatusAtuais, attStatusClasse, attStatusNivel } from "../faitimentos.js";
+import { verifyTodasConquistas } from "../faitimentos/conquistas/verifyConquista.js";
 import { personagem } from "./personagem.js";
 
 export function descobrirProximoRank(rank) {
@@ -13,27 +14,27 @@ export function descobrirProximoRank(rank) {
 }
 
 export function calcularValorEvolucaoNivel() {
-    if (personagem.classe == 'Rank D' && personagem.nivel == 0) {
+    if (personagem.nivel == 0) {
         return 300
-    } else if (personagem.classe == 'Rank C' && personagem.nivel == 1) {
+    } else if (personagem.nivel == 1) {
         return 500
-    } else if (personagem.classe == 'Rank C' && personagem.nivel == 2) {
+    } else if (personagem.nivel == 2) {
         return 800
-    } else if (personagem.classe == 'Rank C' && personagem.nivel == 3) {
+    } else if (personagem.nivel == 3) {
         return 1000
-    } else if (personagem.classe == 'Rank B' && personagem.nivel == 4) {
+    } else if (personagem.nivel == 4) {
         return 1500
-    } else if (personagem.classe == 'Rank B' && personagem.nivel == 5) {
+    } else if (personagem.nivel == 5) {
         return 2000
-    } else if (personagem.classe == 'Rank B' && personagem.nivel == 6) {
+    } else if (personagem.nivel == 6) {
         return 2500
-    } else if (personagem.classe == 'Rank A' && personagem.nivel == 7) {
+    } else if (personagem.nivel == 7) {
         return 4000
-    } else if (personagem.classe == 'Rank A' && personagem.nivel == 8) {
+    } else if (personagem.nivel == 8) {
         return 5000
-    } else if (personagem.classe == 'Rank A' && personagem.nivel == 9) {
+    } else if (personagem.nivel == 9) {
         return 10000
-    } else if (personagem.classe == 'Rank A' && personagem.nivel == 10) {
+    } else if (personagem.nivel == 10) {
         return 20000
     } else {
         return false
@@ -99,29 +100,29 @@ export function calcularValorUpgradeVelocidade() {
 
 export function calcularValorUpgradeCritico() {
     if (personagem.critico >= 80 && personagem.nivel >= 9) {
-        return personagem.critico * 50
+        return personagem.critico * 500
     } else if (personagem.critico >= 50 && personagem.nivel >= 6) {
-        return personagem.critico * 40
+        return personagem.critico * 400
     } else if (personagem.critico >= 30 && personagem.nivel >= 3) {
-        return personagem.critico * 30
+        return personagem.critico * 300
     } else if (personagem.critico >= 5 && personagem.nivel >= 1) {
-        return personagem.critico * 20
+        return personagem.critico * 200
     } else if (personagem.critico >= 1 && personagem.nivel >= 0) {
-        return personagem.critico * 10
+        return personagem.critico * 100
     }
 }
 
 export function calcularValorUpgradeChanceCritico() {
     if (personagem.chanceCritico >= 80 && personagem.nivel >= 9) {
-        return personagem.chanceCritico * 50
+        return personagem.chanceCritico * 600
     } else if (personagem.chanceCritico >= 50 && personagem.nivel >= 6) {
-        return personagem.chanceCritico * 40
+        return personagem.chanceCritico * 500
     } else if (personagem.chanceCritico >= 30 && personagem.nivel >= 3) {
-        return personagem.chanceCritico * 30
+        return personagem.chanceCritico * 400
     } else if (personagem.chanceCritico >= 5 && personagem.nivel >= 1) {
-        return personagem.chanceCritico * 20
+        return personagem.chanceCritico * 300
     } else if (personagem.chanceCritico >= 1 && personagem.nivel >= 0) {
-        return personagem.chanceCritico * 10
+        return personagem.chanceCritico * 200
     }
 }
 
@@ -167,6 +168,7 @@ export function evoluirClasse() {
     attStatusClasse()
     attGraficos()
     attStatusAtuais()
+    verifyTodasConquistas()
 }
 
 export function evoluirLevel() {
@@ -175,6 +177,7 @@ export function evoluirLevel() {
             personagem.faixaNivel -= calcularValorEvolucaoNivel()
             personagem.nivel ++
             attStatusNivel()
+            verifyTodasConquistas()
         }
     }
 }
