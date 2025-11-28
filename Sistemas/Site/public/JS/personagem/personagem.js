@@ -12,8 +12,27 @@ var saveVelocidade = sessionStorage.VELOCIDADE_USUARIOFAITIMENTOS
 var saveCritico = sessionStorage.CRITICO_USUARIOFAITIMENTOS
 var saveChanceCritico = sessionStorage.CHANCECRITICO_USUARIOFAITIMENTOS
 var saveClasse = sessionStorage.CLASSE_USUARIOFAITIMENTOS
-var saveConquistasFeitas = []
 var saveDtCadastro = sessionStorage.DTCADASTRO_USUARIOFAITIMENTOS
+
+export function puxarConquistas() {
+    var saveStringConquistasFeitas = sessionStorage.CONQUISTASFEITAS_USUARIOFAITIMENTOS
+    var saveConquistasFeitas = []
+    var auxiliar = ''
+    var quantidadeTotal = String(saveStringConquistasFeitas).length
+    console.log(saveStringConquistasFeitas[0])
+    for (var i = 0; i <= quantidadeTotal; i++) {
+        if (i == quantidadeTotal) {
+            saveConquistasFeitas.push(auxiliar)
+        } else if (saveStringConquistasFeitas[i] != ',') {
+            auxiliar += saveStringConquistasFeitas[i]
+        } else {
+            saveConquistasFeitas.push(auxiliar)
+            auxiliar = ''
+        }
+    }
+
+    personagem.conquistasFeitas = saveConquistasFeitas
+}
 
 export var personagem = {
     tagJogador: saveTagJogador,
@@ -30,6 +49,6 @@ export var personagem = {
     critico: parseInt(saveCritico),
     chanceCritico: parseInt(saveChanceCritico),
     classe: saveClasse,
-    conquistasFeitas: saveConquistasFeitas,
+    conquistasFeitas: [],
     dtCadastro: saveDtCadastro
 }

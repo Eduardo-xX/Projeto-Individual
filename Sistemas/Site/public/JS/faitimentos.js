@@ -1,6 +1,8 @@
+entrarConquistasFaitimentos()
+
 import { verificarConquistasRanks, verificarTodasConquistas, verifyTodasConquistas } from "./faitimentos/conquistas/verifyConquista.js";
 import { createFightInimigoBasicoD } from "./faitimentos/fight/criarFight.js";
-import { personagem } from "./personagem/personagem.js";
+import { personagem, puxarConquistas } from "./personagem/personagem.js";
 import { salvarPersonagem } from "./personagem/salvarPerso.js";
 import { verLimiteStatusRealPersonagem, verStatusRealPersonagem } from "./personagem/statusReal.js";
 import { calcularNivelUpgradeClasse, calcularValorEvolucaoNivel, calcularValorUpgradeChanceCritico, calcularValorUpgradeCritico, calcularValorUpgradeDano, calcularValorUpgradeDefesa, calcularValorUpgradeVelocidade, calcularValorUpgradeVida, descobrirProximoRank, evoluirClasse, evoluirLevel, upgradeChanceCritico, upgradeCritico, upgradeDano, upgradeDefesa, upgradeVelocidade, upgradeVida } from "./personagem/upgradePersonagem.js";
@@ -567,4 +569,31 @@ function criarGrafico() {
     });
 
     return [saveGrafico, saveGraficoDash]
+}
+
+export function entrarConquistasFaitimentos() {
+    var idUsuarioGameVar = sessionStorage.ID_USUARIOCONTAFAITIMENTOS
+    var idUsuarioVar = sessionStorage.ID_USUARIO
+
+    fetch('faitimentos/autenticarConquistas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            idUsuarioGameServer: idUsuarioGameVar,
+            idUsuarioServer: idUsuarioVar
+        })
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    sessionStorage.CONQUISTASFEITAS_USUARIOFAITIMENTOS = json.conquistasFeitas
+                })
+
+                puxarConquistas()
+            } else {
+                alert('deu ruim, nn econtrou as conquistas')
+            }
+        })
 }

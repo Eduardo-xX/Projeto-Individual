@@ -11,6 +11,10 @@ router.post('/autenticar', function (req, res) {
     faitimentosController.autenticar(req, res)
 })
 
+router.post('/autenticarConquistas', function(req, res) {
+    faitimentosController.autenticarConquistas(req, res)
+})
+
 router.post('/salvar', function(req, res) {
     faitimentosController.salvar(req, res)
 })

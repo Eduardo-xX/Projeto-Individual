@@ -160,12 +160,12 @@
                 <div class="jogoSelecionado">
                     <div class="containerJogoSelecionado">
                         <div class="titleJogo">
-                            <h3 id="idTitleJogo">Clicker Lizard</h3>
+                            <h3 id="idTitleJogo">Faitimentos</h3>
                         </div>
                         <div class="sobreJogo">
                             <div class="carrossel">
                                 <div class="img">
-                                    <img id="imgCarrosselJogo" src="./assets/clickerLizard1.png" alt="Primeira Imagem do Jogo ClickerLizard">
+                                    <img id="imgCarrosselJogo" src="/assets/gameFaitimentos/faitimentos1.png" alt="Primeira Imagem do Jogo Faitimentos">
                                 </div>
                                 <div class="setas">
                                     <img onclick="alterarImagemJogoLeft()" src="./assets/arrow_left-1000_black.png" alt="Seta para Esquerda">
@@ -173,26 +173,26 @@
                                 </div>
                             </div>
                             <div class="texts">
-                                <span id="idMiniTitleJogo" class="miniTitleJogo">Em Desenvolvimento...</span>
+                                <span id="idMiniTitleJogo" class="miniTitleJogo">Faça Login para jogar</span>
 
                                 <span id="idTextJogo" class="textJogo">
-                                    Primeiro jogo que eu realmente tentei focar para desenvolver.
+                                    Jogo que desenvolvi para demonstrar minhas habilidades no projeto Individual do 1° semestre na SPTECH.
                                     <br>
-                                    Comecei ele para praticar programação e desenvolver novas habilidades. 
+                                    Pegando a ideia do outro jogo que era o sistema de combate, decidi focar nele pois o tempo era curto. 
                                     <br>
-                                    Tenho ele comitado no meu Github pessoal, espero um dia conseguir continuar desenvolvendo ele pois tive que pausar quando entrei na SPTECH.
+                                    Utilizei o método Scrum para uma melhor organização do projeto, para me auxiliar utilizei as seguintes ferramentas de Gestão: Trello, Github, Word e o Excel.
                                     <br><br>
-                                    Ele é um jogo clicker, com sistema de level e autoclick já implementados, antes de eu parar de desenvolve-lo eu estava implementando um sistema de personagem e bosses.
+                                    É um jogo com o combate automatico, sistemas de level, conquistas e classes.
                                     <br>
-                                    Você conseguiria upar seus status e após chegar a um certo level iria desbloquear o boss para derrotá-lo.
+                                    Com uma tela chamada de dashboard, ela serve para entender como está o andamento do seu jogo, demonstrando pontuações totais e % para upar, tanto level quanto Status.
                                     <br>
-                                    Após derrotar esse boss você iria desbloquear 3 novos upgrades:
+                                    Sobre as classes, a ordem é a seguinte (Rank D, Rank C, Rank B, Rank A e por fim Rank S)
                                     <br>
-                                    1° para upar e aumentar a quantidade de pontos que o boss iria te dar,
+                                    A cada classe existe um máximo de Status que você pode upar, então caso chegue nesse total, upe de classe para continuar upando os Status
                                     <br>
-                                    2° para upar e aumentar a quantidade de tempo da sequencia de pontos gerados,
+                                    Para upar de classe também é necessário uma certa quantidade de Nível, isso vária entre as classes.
                                     <br>
-                                    3° para upar e diminuir o delay que este boss iria te gerar na sequencia de pontos.
+                                    Também há as conquistas, que você pode vizualiza-las quando clicar no botão de perfil dentro do jogo, as que estiver clara são as conquistas que você já realizou e as escuras, ainda não conquistou.
                                 </span>
                             </div>
                         </div>
@@ -228,10 +228,10 @@
                 </div>
                 <div class="formulario">
                     <div class="containerFormulario">
-                        <input type="text" name="" id="input_nomeUsuario" placeholder="Nome do Usuário">
+                        <input type="text" name="" id="input_nomeUsuario" placeholder="Nome do Usuário" oninput="valNomeU()">
                         <div class="meiosContatos">
-                            <input type="text" name="" id="input_emailUsuario" placeholder="Email para contato">
-                            <input type="text" name="" id="input_telefoneUsuario" placeholder="Telefone para contato">
+                            <input type="text" name="" id="input_emailUsuario" placeholder="Email para contato" oninput="valEmail()">
+                            <input type="text" name="" id="input_telefoneUsuario" placeholder="Telefone para contato" oninput="valTel()">
                         </div>
                         <select name="" id="select_temaMensagem">
                             <option value="#" selected disabled>Selecione uma Opção de Tema</option>
@@ -242,7 +242,8 @@
                             <option value="Negócios">Negócios</option>
                             <option value="Outros">Outros</option>
                         </select>
-                        <textarea name="" id="textarea_mensagem" placeholder="Deixe sua mensagem..." rows="5"></textarea>
+                        <textarea name="" id="textarea_mensagem" placeholder="Deixe sua mensagem..." rows="5" oninput="valMsg()"></textarea>
+                        <div id="idMensagemContato" class="div_mensagemContato"></div>
                         <input type="submit" name="" id="input_enviar" value="Enviar" onclick="enviarMsg()">
                     </div class="containerFormulario">
                 </div>

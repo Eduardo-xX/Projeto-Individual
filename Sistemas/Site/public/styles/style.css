@@ -283,7 +283,7 @@ main .conteudo .buttonMain a:hover {
     font-family: var(--fontFamily-regular_2);
 }
 
-#sobreMim .conteudo .textMim .dtqEu0 {
+/* #sobreMim .conteudo .textMim .dtqEu0 {
     color: var(--cor-principal_1);
     text-shadow: 1px 1px 1px var(--cor-black);
     font-weight: bold;
@@ -315,7 +315,7 @@ main .conteudo .buttonMain a:hover {
     color: var(--cor-secundario_4);
     text-shadow: 1px 1px 1px var(--cor-black);
     font-weight: bold;
-}
+} */
 
 /* Fim SobreMim */
 
@@ -324,7 +324,7 @@ main .conteudo .buttonMain a:hover {
 #sobreProjeto {
     width: 100%;
     height: 800px;
-    background: linear-gradient(to bottom, var(--cor-principal_1), var(--cor-principal_2));
+    background: linear-gradient(to bottom, rgb(43, 4, 97, 0.8), rgb(25, 25, 96, 0.8));
 }
 
 #sobreProjeto .containerSobreProjeto {
@@ -384,7 +384,7 @@ main .conteudo .buttonMain a:hover {
     color: var(--cor-secundario_3);
     margin: 0 1rem;
 }
-
+/* 
 #sobreProjeto .conteudo .dtqPj2 {
     color: var(--cor-white);
     text-shadow: 1px 1px 1px var(--cor-black);
@@ -407,7 +407,7 @@ main .conteudo .buttonMain a:hover {
     color: var(--cor-secundario_4);
     text-shadow: 1px 1px 1px var(--cor-black);
     font-weight: bold;
-}
+} */
 
 /* Fim sobreProjeto */
 
@@ -638,6 +638,15 @@ main .conteudo .buttonMain a:hover {
 #contato .conteudo .formulario .meiosContatos #input_emailUsuario,
 #contato .conteudo .formulario .meiosContatos #input_telefoneUsuario {
     width: 48%;
+}
+
+#contato .conteudo .formulario .div_mensagemContato {
+    width: 100%;
+    font-weight: bold;
+    margin-top: -2rem;
+    margin: .5rem;
+    color: rgb(255, 0, 0);
+    text-align: start;
 }
 
 #contato .conteudo .formulario #input_enviar {

@@ -46,6 +46,44 @@ function autenticar(req, res) {
     }
 }
 
+function autenticarConquistas(req, res) {
+    var idUsuarioGame = req.body.idUsuarioGameServer
+    var idUsuario = req.body.idUsuarioServer
+
+    if (idUsuarioGame == undefined) {
+        res.status(400).send('Seu idUsuarioGame está undefined!')
+    } else if (idUsuario == undefined) {
+        res.status(400).send('Seu idUsuario está indefinido')
+    } else {
+        faitimentosModel.autenticarConquistas(idUsuarioGame, idUsuario)
+        .then(
+            function (resultadoAutenticar) {
+                if (resultadoAutenticar.length >= 1) {
+                    var listaConquistas = []
+                    for (var i = 0; i < resultadoAutenticar.length; i++) {
+                        if (resultadoAutenticar[i].realizado == 1) {
+                            listaConquistas.push(resultadoAutenticar[i].fkConquista)
+                        }
+                    }
+                    res.json({
+                        conquistasFeitas: listaConquistas
+                    })
+                } else {
+                    res.status(403).send('sla não encontrada')
+                    res.json({
+                        conquistasFeitas: -1
+                    })
+                }
+            }
+        ).catch (
+            function (erro) {
+                res.status(500).json(erro.sqlMessage)
+            }
+        )
+        
+    }
+}
+
 function cadastrar(req, res) {
     var idUsuario = req.body.idUsuarioServer
     var nickname = req.body.nicknameServer
@@ -59,6 +97,9 @@ function cadastrar(req, res) {
         .then(
             function (resultado) {
                 res.json(resultado)
+                // var idUsuarioGame = resultado[0].idContaFaitimentos
+                // console.log(idUsuarioGame)
+                faitimentosModel.cadastrarConquistas(idUsuario, nickname)
             }
         ).catch (
             function (erro) {
@@ -136,7 +177,6 @@ function salvar(req, res) {
             function (resultado) {
                 res.json(resultado)
                 faitimentosModel.salvarConquistadas(idUsuarioGame, idUsuario, conquistasFeitas)
-                console.log('feito')
             }
         ).catch (
             function (erro) {
@@ -148,6 +188,7 @@ function salvar(req, res) {
 
 module.exports = {
     autenticar,
+    autenticarConquistas,
     cadastrar,
     salvar
 }

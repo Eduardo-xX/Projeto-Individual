@@ -9,6 +9,14 @@ function autenticar(idUsuario, nickname) {
     return database.executar(instrucaoSql)
 }
 
+function autenticarConquistas(idUsuarioGame, idUsuario) {
+    var instrucao_Sql = `
+        SELECT realizado, fkConquista FROM conquistadas WHERE realizado = 1 AND fkContaFaitimentos = '${idUsuarioGame}' AND fkUsuario = '${idUsuario}';
+    `
+    console.log(instrucao_Sql)
+    return database.executar(instrucao_Sql)
+}
+
 function cadastrar(idUsuario, nickname) {
     var instrucaoSql = `
         INSERT INTO contaFaitimentos (idContaFaitimentos, fkUsuario, tagJogador, nickname, nivel, faixaNivel, totalUpgrades, totalXp, xp, dano, defesa, vida, velocidade, critico, chanceCritico, classe)
@@ -18,6 +26,47 @@ function cadastrar(idUsuario, nickname) {
 
     return database.executar(instrucaoSql)
 }
+
+async function cadastrarConquistas(idUsuario, nickname) {
+    var instrucao_Sql = `
+        SELECT idContaFaitimentos FROM contaFaitimentos WHERE fkUsuario = '${idUsuario}' AND nickname = '${nickname}';
+    `
+
+    var result = await database.executar(instrucao_Sql)
+
+    var idUsuarioGame = result[0].idContaFaitimentos
+
+    console.log('entrou no cadastro conquista')
+    var instrucao_Sql = `
+        INSERT INTO conquistadas (fkContaFaitimentos, fkUsuario, fkConquista, realizado) VALUES
+        ('${idUsuarioGame}', '${idUsuario}', 1, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 2, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 3, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 4, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 5, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 6, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 7, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 8, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 9, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 10, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 11, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 12, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 13, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 14, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 15, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 16, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 17, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 18, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 19, 0),
+        ('${idUsuarioGame}', '${idUsuario}', 20, 0);
+    `
+
+    var cadastroCQ = await database.executar(instrucao_Sql)
+
+    console.log(cadastroCQ + '\nconquistas cadastradas')
+
+    return
+} 
 
 function salvar(idContaGame, idJogador, nivel, faixaNivel, totalUpgrades, totalXp, xp, dano, defesa, vida, velocidade, critico, chanceCritico, classe) {
     var instrucaoSql = `
@@ -40,38 +89,36 @@ function salvar(idContaGame, idJogador, nivel, faixaNivel, totalUpgrades, totalX
     return database.executar(instrucaoSql)
 }
 
-function salvarConquistadas(idContaGame, idJogador, listaConquistas) {
-    var contador  = ''
+async function salvarConquistadas(idContaGame, idJogador, listaConquistas) {
     var instrucao_Sql = ''
     for (var i = 0; i < listaConquistas.length; i++) {
-        instrucao_Sql = `SELECT COUNT(fkConquista) FROM conquistadas WHERE fkContaFaitimentos = '${idContaGame}' AND fkUsuario = '${idJogador}' AND fkConquista = '${listaConquistas[0]}`
+        instrucao_Sql = `SELECT realizado FROM conquistadas WHERE fkContaFaitimentos = '${idContaGame}' AND fkUsuario = '${idJogador}' AND fkConquista = '${listaConquistas[i]}'`
 
-        var resultado = database.executar(instrucao_Sql)
-        if (resultado.length >= 1) {
-            console.log('Maior ou igual 3')
-            console.log('Já tem essa conquista no BD')
-        } else if (resultado.length == 0) {
-            // Ou deu erro na verificação, não algo do tipo
-            // Não tem nenhum cadastro com essa conta e informações.
+        var resultado = await database.executar(instrucao_Sql)
+        if (resultado[0].realizado == 0) {
+            instrucao_Sql = `UPDATE conquistadas SET realizado = 1 WHERE fkContaFaitimentos = '${idContaGame}' AND fkUsuario = '${idJogador}' AND  fkConquista = '${listaConquistas[i]}'`
 
+            var atualizado = await database.executar(instrucao_Sql)
 
-            instrucao_Sql = `
-                INSERT INTO conquistadas (fkContaFaimentos, idJogador fkConquista)  VALUES {
-                    ('${idContaGame}', '${idJogador}', ${listaConquistas[i]})
-                } 
-            `
-            database.executar(instrucao_Sql)
+            console.log(atualizado)
+
+            console.log(`Nova conquista realizada: ID ${listaConquistas[i]}`)
+        } else if (resultado[0].realizado == 1) {
+            console.log(`Já tinha realizado essa conquista: ID ${listaConquistas[i]}`)
+
         } else {
-            console.log('sla doido')
+            console.log('Não encontrou a conquista no BD com seu Login')
         }
 
-        return 'ok, consigo tábom'
+        return
     }
 }
 
 module.exports = {
     autenticar,
+    autenticarConquistas,
     cadastrar,
+    cadastrarConquistas,
     salvar,
     salvarConquistadas
 }

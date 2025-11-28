@@ -39,11 +39,11 @@ function entrarFaitimentos() {
                     sessionStorage.CHANCECRITICO_USUARIOFAITIMENTOS = json.chanceCritico
                     sessionStorage.CLASSE_USUARIOFAITIMENTOS = json.classe
                     sessionStorage.DTCADASTRO_USUARIOFAITIMENTOS = json.dtCadastro
-
-                    setTimeout(function () {
-                        window.location = 'faitimentos.html'
-                    }, 1000)
                 })
+                
+                setTimeout(function () {
+                    window.location = 'faitimentos.html'
+                }, 1000)
             } else {
                 const textoErro = await resposta.text()
                 if (textoErro == 'Conta não encontrada') {

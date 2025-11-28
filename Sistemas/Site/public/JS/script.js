@@ -22,15 +22,35 @@ var textJogoClickerLizard = `
     3° para upar e diminuir o delay que este boss iria te gerar na sequencia de pontos.
 `
 
-var listaImgJogoClickerLizard = ['/assets/clickerLizard1.png', '/assets/clickerLizard2.png', '/assets/clickerLizard3.png', '/assets/clickerLizard4.png', '/assets/clickerLizard5.png']
+var textJogoFaitimentos = `
+    Jogo que desenvolvi para demonstrar minhas habilidades no projeto Individual do 1° semestre na SPTECH.
+    <br>
+    Pegando a ideia do outro jogo que era o sistema de combate, decidi focar nele pois o tempo era curto. 
+    <br>
+    Utilizei o método Scrum para uma melhor organização do projeto, para me auxiliar utilizei as seguintes ferramentas de Gestão: Trello, Github, Word e o Excel.
+    <br><br>
+    É um jogo com o combate automatico, sistemas de level, conquistas e classes.
+    <br>
+    Com uma tela chamada de dashboard, ela serve para entender como está o andamento do seu jogo, demonstrando pontuações totais e % para upar, tanto level quanto Status.
+    <br>
+    Sobre as classes, a ordem é a seguinte (Rank D, Rank C, Rank B, Rank A e por fim Rank S)
+    <br>
+    A cada classe existe um máximo de Status que você pode upar, então caso chegue nesse total, upe de classe para continuar upando os Status
+    <br>
+    Para upar de classe também é necessário uma certa quantidade de Nível, isso vária entre as classes.
+    <br>
+    Também há as conquistas, que você pode vizualiza-las quando clicar no botão de perfil dentro do jogo, as que estiver clara são as conquistas que você já realizou e as escuras, ainda não conquistou.
+`
 
-var listaImgJogoFaitimentos = ['/assets/imgTest1.png', '/assets/imgTest2.png', '/assets/imgTest3.png', '/assets/imgTest4.png', '/assets/imgTest5.png', '/assets/imgTest6.png']
+var listaImgJogoClickerLizard = ['/assets/gameClickerLizard/clickerLizard1.png', '/assets/gameClickerLizard/clickerLizard2.png', '/assets/gameClickerLizard/clickerLizard3.png', '/assets/gameClickerLizard/clickerLizard4.png', '/assets/gameClickerLizard/clickerLizard5.png']
 
-var listaImgJogosAtuais = ['/assets/clickerLizard1.png', '/assets/clickerLizard2.png', '/assets/clickerLizard3.png', '/assets/clickerLizard4.png', '/assets/clickerLizard5.png']
+var listaImgJogoFaitimentos = ['/assets/gameFaitimentos/faitimentos1.png', '/assets/gameFaitimentos/faitimentos2.png', '/assets/gameFaitimentos/faitimentos3.png', '/assets/gameFaitimentos/faitimentos4.png', '/assets/gameFaitimentos/faitimentos5.png', '/assets/gameFaitimentos/faitimentos6.png']
+
+var listaImgJogosAtuais = ['/assets/gameFaitimentos/faitimentos1.png', '/assets/gameFaitimentos/faitimentos2.png', '/assets/gameFaitimentos/faitimentos3.png', '/assets/gameFaitimentos/faitimentos4.png', '/assets/gameFaitimentos/faitimentos5.png', '/assets/gameFaitimentos/faitimentos6.png']
 
 var listaJogos = [
     ['Clicker Lizard', 'Em Desenvolvimento...', textJogoClickerLizard, listaImgJogoClickerLizard], 
-    ['Faitimentos', 'Em Desenvolvimento', 'Textinho do Faitimentos<br>muito bom o jogo', listaImgJogoFaitimentos]
+    ['Faitimentos', 'Faça Login para jogar', textJogoFaitimentos, listaImgJogoFaitimentos]
 ]
 
 function alterarJogoRight() {
