@@ -28,9 +28,103 @@ function cadastrar() {
         senhaVar == '' ||
         confirmSenhaVar == ''
     ) {
-        alert('Preencha todos os campos!')
+        document.getElementById('idMensagemCadastro').textContent = 'Preencha todos os campos!'
         return false
     }
+
+    if (nicknameVar.length < 3) {
+        idMensagemCadastro.innerText = 'Nickname deve conter pelo menos 3 caracteres.'
+        return
+    }
+    
+    if (nomeVar.length < 3) {
+        idMensagemCadastro.innerText = 'Nome deve conter pelo menos 3 caracteres.'
+        return
+    }
+    
+    if (sobrenomeVar.length < 3) {
+        idMensagemCadastro.innerText = 'Sobrenome deve conter pelo menos 3 caracteres.'
+        return
+    }
+
+    if (!emailVar.includes('@')) {
+        idMensagemCadastro.innerText = 'E-mail deve conter pelo menos 1 @.'
+        return
+    }
+
+    var antesA = emailVar.split('@')
+
+    if (antesA[0].length < 3) {
+        idMensagemCadastro.innerText = 'E-mail deve conter pelo menos 3 letras antes do @.'
+        return
+    }
+
+    if (antesA[1].length < 3) {
+        idMensagemCadastro.innerText = 'E-mail deve conter pelo menos 3 letras depois do @.'
+        return
+    }
+    
+    if (dtNascVar.length != 10) {
+        idMensagemCadastro.innerText = 'Informe sua data de nascimento corretamente.'
+        return
+    }
+    
+    if (senhaVar.length < 8) {
+        idMensagemCadastro.innerText = 'A senha deve conter no minímo 8 caracteres.'
+        return
+    }
+
+    var senhaNumber = false
+    for (var i = 0; i < senhaVar.length; i++) {
+        if (!isNaN(senhaVar[i])) {
+            senhaNumber = true
+        }
+    }
+    
+    if (!senhaNumber) {
+        idMensagemCadastro.innerText = 'A senha deve conter no minímo 1 número.'
+        return
+    }
+    
+    var especiais = `!@#$%&*()_.,;:+-/`
+    var temCEspecial = false
+    for (var i = 0; i < senhaVar.length; i++) {
+        if (especiais.includes(senhaVar[i])) {
+            temCEspecial = true
+        }
+    }
+
+    if (!temCEspecial) {
+        // (! @ # $ % & * ( ) _ . , ; : + - / )
+        idMensagemCadastro.innerText = 'A senha deve conter no minímo 1 caracter especial.'
+        return
+    }
+    
+    if (senhaVar == senhaVar.toLowerCase()) {
+        idMensagemCadastro.innerText = 'A senha deve conter no minímo uma letra maiúscula.'
+        return    
+    }
+    
+    if (senhaVar == senhaVar.toUpperCase()) {
+        idMensagemCadastro.innerText = 'A senha deve conter no minímo uma letra minúscula.'
+        return    
+    }
+    
+    if (senhaVar != confirmSenhaVar) {
+        idMensagemCadastro.innerText = 'O Campo Confirme a Senha deve ser igual ao campo Senha'
+        return        
+    }
+
+    input_nicknameUsuario.value = ''
+    input_nomeUsuario.value = ''
+    input_sobrenomeUsuario.value = ''
+    input_emailUsuario.value = ''
+    input_dtNascUsuario.value = ''
+    input_senhaUsuario.value = ''
+    input_confirmSenhaUsuario.value = ''
+
+    idMensagemCadastro.innerText = ''
+    idMensagemCadastrado.innerText = 'Usuário cadastrado.'
 
     fetch('/usuarios/cadastrar', {
         method: 'POST',

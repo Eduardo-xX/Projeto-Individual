@@ -239,6 +239,18 @@ main .cadastro .formulario #input_dtNascUsuario {
     width: 40%;
 }
 
+main .cadastro .formulario .div_mensagemCadastro {
+    color: var(--cor-secundario_4);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px var(--cor-black);
+}
+
+main .cadastro .formulario .div_mensagemCadastrado {
+    color: var(--cor-secundario_2);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px var(--cor-black);
+}
+
 main .cadastro .formulario #input_entrar {
     background-color: var(--cor-secundario_2);
     color: var(--cor-principal_2);

@@ -12,6 +12,11 @@ function entrar() {
         return
     } 
 
+    input_emailUsuario.value = ''
+    input_senhaUsuario.value = ''
+
+    textCerto.innerText = 'Login realizado com sucesso.'
+
     fetch('/usuarios/autenticar', {
         method: 'POST',
         headers: {
